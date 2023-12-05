@@ -1,3 +1,71 @@
+/** @format */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	.title1 {
+		@apply text-3xl font-sans;
+	}
+
+	.title2 {
+		@apply text-2xl font-sans;
+	}
+
+	.title3 {
+		@apply text-xl font-sans;
+	}
+
+	.heading1 {
+		@apply text-lg font-sans;
+	}
+
+	.heading2 {
+		@apply font-display text-xs uppercase antialiased;
+	}
+
+	.bodytext1 {
+		@apply font-body text-base antialiased;
+	}
+
+	.bodytext2 {
+		@apply font-body font-light text-xs text-zinc-700;
+	}
+
+	.btn {
+		@apply bg-black text-white font-sans w-fit font-medium antialiased rounded-xs;
+	}
+}
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+img,
+video {
+	max-width: 100%;
+	height: auto;
+}
