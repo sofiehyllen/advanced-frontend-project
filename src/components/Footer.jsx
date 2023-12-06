@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
 	return (
 		<footer>
-			<div className='grid grid-cols-2 heading2 pt-5 gap-y-5 md:pt-16 md:grid-cols-4 xl:grid-cols-5'>
+			<div className='grid grid-cols-2 heading3 pt-5 gap-y-5 md:pt-16 md:grid-cols-4 xl:grid-cols-5'>
 				<div className='flex flex-col relative'>
 					<h4>Nyhedsbrev</h4>
 					<input
@@ -13,7 +13,7 @@ export default function Footer() {
 						id='email'
 						placeholder='Skriv din mail her'
 					/>
-					<button type='submit' className='btn absolute text-s bottom-0 left-0 px-3 py-1 md:text-xs xl:text-xxs xl:px-5'>
+					<button type='submit' className='btn absolute bottom-0 left-0 px-3 py-1 xl:px-5'>
 						Tilmeld
 					</button>
 				</div>

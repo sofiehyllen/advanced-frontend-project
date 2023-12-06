@@ -6,35 +6,59 @@
 
 @layer base {
 	.title1 {
-		@apply text-3xl font-sans;
+		@apply font-sans text-4xl md:text-7xl xl:text-8xl;
 	}
 
 	.title2 {
-		@apply text-2xl font-sans;
+		@apply font-sans text-3xl md:text-6xl xl:text-8xl;
 	}
 
 	.title3 {
-		@apply text-xl font-sans;
+		@apply font-sans text-2xl md:text-5xl xl:text-7xl;
 	}
 
 	.heading1 {
-		@apply text-lg font-sans;
+		@apply font-sans text-lg md:text-2xl xl:text-4xl;
 	}
 
 	.heading2 {
-		@apply font-display text-xs uppercase antialiased;
+		@apply font-sans text-sm md:text-2xl xl:text-3xl;
+	}
+
+	.heading3 {
+		@apply font-display uppercase antialiased text-xs md:text-base xl:text-xl;
 	}
 
 	.bodytext1 {
-		@apply font-body text-base antialiased;
+		@apply font-body antialiased text-sm md:text-lg xl:text-xl xl:pt-6;
 	}
 
 	.bodytext2 {
-		@apply font-body font-light text-xs text-zinc-700;
+		@apply font-body font-light text-zinc-700 text-xs md:text-base xl:text-xl;
 	}
 
 	.btn {
-		@apply bg-black text-white font-sans w-fit font-medium antialiased rounded-xs;
+		@apply flex items-center bg-black text-white font-sans w-fit font-normal antialiased rounded text-xs px-3 py-2 md:text-base md:px-4 md:py-2 md:rounded-md xl:text-lg xl:font-medium xl:px-5;
+	}
+
+	.btn img {
+		@apply h-3 md:h-5 xl:h-7 ml-1 md:ml-2 xl:ml-3;
+	}
+
+	.h-line {
+		@apply border-b border-black my-10 md:my-16 xl:my-20;
+	}
+
+	.v-line {
+		@apply border-r border-black mx-8 md:mx-10 xl:mx-16;
+	}
+
+	.img-container {
+		@apply rounded-img-sm object-cover md:rounded-img-md xl:rounded-img-lg h-full w-full;
+	}
+
+	.img-container-sm {
+		@apply rounded-img-xs object-cover md:rounded-img-sm xl:rounded-img-md h-full w-full;
 	}
 }
 
