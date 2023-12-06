@@ -1,26 +1,20 @@
 [
 	{
-		"id": "t-shirt",
-		"name": "T-Shirt",
-		"price": 35.0,
-		"imageUrl": "https://www.datocms-assets.com/56262/1633338865-shirt.jpg",
-		"description": "A white t-shirt",
-		"url": "/api/products/halfmoon"
+		"id": "act_acre_hairmask",
+		"name": "Act+ Acre - Hair mask",
+		"price": 159,
+		"brand": "Act+ Acre",
+		"imageUrl": "/src/assets/webshop-act.jpg",
+		"description": "Dette er en hårmaske",
+		"url": "/"
 	},
 	{
-		"id": "wallet",
-		"name": "Wallet",
-		"price": 20.0,
-		"imageUrl": "https://www.datocms-assets.com/56262/1633338869-fancy-wallet.jpg",
-		"description": "A fancy wallet",
-		"url": "/api/products/wallet"
-	},
-	{
-		"id": "cup",
-		"name": "Cup",
-		"price": 5.0,
-		"imageUrl": "https://www.datocms-assets.com/56262/1633338802-cup.jpg",
-		"description": "A tea cup",
-		"url": "/api/products/veiltail"
+		"id": "curology_shampoo",
+		"name": "Curology - Shampoo",
+		"price": 199,
+		"brand": "Curology",
+		"imageUrl": "/src/assets/webshop-curology-green.jpg",
+		"description": "Dette er en shampoo",
+		"url": "/"
 	}
 ]

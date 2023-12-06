@@ -6,9 +6,9 @@ export default function WebshopPage() {
 		<section>
 			<div>
 				<div>
-					<div className={'grid'}>
-						{products.map((product, i) => (
-							<Product {...product} key={i} />
+					<div className={'grid grid-cols-2 auto-cols-max gap-4 w-1/2'}>
+						{products.map((product) => (
+							<Product {...product} key={product.id} />
 						))}
 					</div>
 				</div>

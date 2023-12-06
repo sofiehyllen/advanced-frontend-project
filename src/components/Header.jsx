@@ -14,15 +14,22 @@ export default function Header() {
 				<div className='heading1'>
 					<NavLink to='/'>Logo</NavLink>
 				</div>
-				<nav>
+
+				{/*Navigation */}
+				<nav className='flex items-center space-x-4'>
+					{/*Ikoner til farvoritter og indkøbskurv */}
+					<div className='flex ml-10 md:order-4'>
+						<IoMdHeart className='icon-size mr-4 xl:mr-5' />
+						<button className='snipcart-checkout'>
+							<TbShoppingBag className='icon-size mr-1' />
+						</button>
+						<span className='snipcart-items-count pt-1'></span>
+					</div>
+
 					{/*-- Mobile menu --*/}
 					<section className='flex md:hidden'>
 						{/* Vi laver en 'toggle-effekt' mellem sandt og falsk vha. en arrowfunktion */}
-
 						<div className='flex items-center space-x-4' onClick={() => setIsNavOpen((prev) => !prev)}>
-							{/* Ikoner */}
-							<IoMdHeart size={30} />
-							<TbShoppingBag size={30} />
 							<IoMenu size={45} />
 						</div>
 
@@ -44,7 +51,7 @@ export default function Header() {
 					</section>
 
 					{/*-- Tablet og laptop menu --*/}
-					<div className='hidden md:block space-x-10'>
+					<div className='hidden md:block space-x-10 text-base xl:text-lg'>
 						<NavLink to='/'>Book tid</NavLink>
 						<NavLink to='/behandlinger'>Behandlinger</NavLink>
 						<NavLink to='/'>Mød os</NavLink>
