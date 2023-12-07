@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import BehandlingerPage from './pages/BehandlingerPage';
 import Footer from './components/Footer';
@@ -15,6 +15,7 @@ function App() {
 				<Route path='/behandlinger' element={<BehandlingerPage />} />
 				<Route path='/webshop' element={<WebshopPage />} />
 				<Route path='/products/:id' element={<ProductPage />} />
+				<Route path='/*' element={<Navigate to='/' />} />
 			</Routes>
 			<Footer />
 		</BrowserRouter>

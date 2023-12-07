@@ -1,20 +1,23 @@
 [
 	{
 		"id": "act_acre_hairmask",
-		"name": "Act+ Acre - Hair mask",
 		"price": 159,
+		"url": "/api/products/1.json",
+
+		"imageUrl": "https://i.ibb.co/59SMP09/webshop-act.jpg",
+		"name": "Act+ Acre - Hair mask",
 		"brand": "Act+ Acre",
-		"imageUrl": "/src/assets/webshop-act.jpg",
-		"description": "Dette er en hårmaske",
-		"url": "/"
+		"description": "Dette er en hårmaske"
 	},
+
 	{
 		"id": "curology_shampoo",
-		"name": "Curology - Shampoo",
 		"price": 199,
+		"url": "/api/products/2.json",
+
+		"imageUrl": "https://i.ibb.co/fM53Zbx/webshop-curology-green.jpg",
+		"name": "Curology - Shampoo",
 		"brand": "Curology",
-		"imageUrl": "/src/assets/webshop-curology-green.jpg",
-		"description": "Dette er en shampoo",
-		"url": "/"
+		"description": "Dette er en shampoo"
 	}
 ]

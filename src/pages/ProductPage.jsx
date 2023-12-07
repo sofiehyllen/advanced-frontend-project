@@ -22,7 +22,7 @@ const ProductPage = () => {
 					data-item-id={product.id}
 					data-item-image={product.imageUrl}
 					data-item-name={product.name}
-					data-item-url='/'
+					data-item-url={product.url}
 					data-item-price={product.price}>
 					Tilføj til kurv
 				</button>
