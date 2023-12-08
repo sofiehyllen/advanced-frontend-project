@@ -60,10 +60,6 @@
 	.img-container-sm {
 		@apply rounded-img-xs object-cover md:rounded-img-sm xl:rounded-img-md h-full w-full;
 	}
-
-	.icon-size {
-		@apply text-3xl md:text-xl xl:text-2xl;
-	}
 }
 
 blockquote,
