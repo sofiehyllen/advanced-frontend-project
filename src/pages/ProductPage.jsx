@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import products from '/products.json'; // Juster stien baseret på din projektstruktur
 
-const ProductPage = () => {
+export default function ProductPage() {
 	const { id } = useParams();
 	const product = products.find((product) => product.id === id);
 
@@ -29,6 +29,4 @@ const ProductPage = () => {
 			</div>
 		</div>
 	);
-};
-
-export default ProductPage;
+}

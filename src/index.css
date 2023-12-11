@@ -50,7 +50,7 @@
 	}
 
 	.v-line {
-		@apply border-r border-black mx-8 md:mx-10 xl:mx-16;
+		@apply border-r border-black hidden mx-8 md:block md:mx-10 xl:mx-16;
 	}
 
 	.img-container {
