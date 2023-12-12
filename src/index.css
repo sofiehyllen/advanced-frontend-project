@@ -38,7 +38,7 @@
 	}
 
 	.btn {
-		@apply flex items-center bg-black text-white font-sans w-fit font-normal antialiased rounded text-xs px-3 py-2 md:text-base md:px-4 md:py-2 md:rounded-md xl:text-lg xl:font-medium xl:px-5;
+		@apply flex items-center bg-black text-white font-sans w-fit h-fit font-medium antialiased rounded text-xs px-4 py-2 md:text-base md:px-4 md:py-2 md:rounded-md xl:text-lg xl:font-medium xl:px-5;
 	}
 
 	.btn img {
