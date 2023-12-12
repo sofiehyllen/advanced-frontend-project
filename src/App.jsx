@@ -5,6 +5,9 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import WebshopPage from './pages/WebshopPage';
 import ProductPage from './pages/ProductPage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+
 
 function App() {
 	return (
@@ -13,6 +16,8 @@ function App() {
 			<Routes>
 				<Route path='/' element={<HomePage />} />
 				<Route path='/behandlinger' element={<BehandlingerPage />} />
+				<Route path='/about' element={<AboutPage />} />
+				<Route path='/contact' element={<ContactPage />} />
 				<Route path='/webshop' element={<WebshopPage />} />
 				<Route path='/products/:id' element={<ProductPage />} />
 				<Route path='/*' element={<Navigate to='/' />} />

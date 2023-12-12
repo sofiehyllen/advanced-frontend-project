@@ -42,8 +42,8 @@ export default function Header() {
 								<div className='flex flex-col items-center space-y-10 title1'>
 									<NavLink to='/'>Book tid</NavLink>
 									<NavLink to='/behandlinger'>Behandlinger</NavLink>
-									<NavLink to='/'>Mød os</NavLink>
-									<NavLink to='/'>Kontakt</NavLink>
+									<NavLink to='/about'>Mød os</NavLink>
+									<NavLink to='/contact'>Kontakt</NavLink>
 									<NavLink to='/webshop'>Shop</NavLink>
 								</div>
 							</div>
@@ -54,9 +54,10 @@ export default function Header() {
 					<div className='hidden md:block space-x-10 text-base xl:text-lg'>
 						<NavLink to='/'>Book tid</NavLink>
 						<NavLink to='/behandlinger'>Behandlinger</NavLink>
-						<NavLink to='/'>Mød os</NavLink>
-						<NavLink to='/'>Kontakt</NavLink>
+						<NavLink to='/about'>Mød os</NavLink>
+						<NavLink to='/contact'>Kontakt</NavLink>
 						<NavLink to='/webshop'>Shop</NavLink>
+						
 					</div>
 				</nav>
 			</div>
