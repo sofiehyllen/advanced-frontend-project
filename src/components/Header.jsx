@@ -43,7 +43,7 @@ export default function Header() {
 									<NavLink to='/'>Book tid</NavLink>
 									<NavLink to='/behandlinger'>Behandlinger</NavLink>
 									<NavLink to='/about'>Mød os</NavLink>
-									<NavLink to='/'>Kontakt</NavLink>
+									<NavLink to='/contact'>Kontakt</NavLink>
 									<NavLink to='/webshop'>Shop</NavLink>
 								</div>
 							</div>
@@ -55,8 +55,9 @@ export default function Header() {
 						<NavLink to='/'>Book tid</NavLink>
 						<NavLink to='/behandlinger'>Behandlinger</NavLink>
 						<NavLink to='/about'>Mød os</NavLink>
-						<NavLink to='/'>Kontakt</NavLink>
+						<NavLink to='/contact'>Kontakt</NavLink>
 						<NavLink to='/webshop'>Shop</NavLink>
+						
 					</div>
 				</nav>
 			</div>
