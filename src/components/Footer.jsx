@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
 	return (
 		<footer>
-			<div className='grid grid-cols-2 heading3 pt-5 gap-y-5 md:pt-16 md:grid-cols-4 xl:grid-cols-5'>
+			<div className='grid grid-cols-2 heading3 pt-16 gap-y-5 md:pt-16 md:grid-cols-4 xl:grid-cols-5'>
 				<div className='flex flex-col relative'>
 					<h4>Nyhedsbrev</h4>
 					<input
