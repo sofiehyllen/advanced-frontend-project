@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import arrowRightUp from '/src/assets/arrow-right-up.svg';
 import arrowRight from '/src/assets/arrow-right.svg';
 import home1 from '/src/assets/home-1.jpg';
@@ -14,6 +15,11 @@ import icon3 from '/src/assets/icon3.png';
 import { Link } from 'react-router-dom';
 
 export default function HomePage() {
+	// Hook som sørger for at siden starter fra toppen når den renderes
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	return (
 		<section>
 			<div className='md:flex'>
@@ -63,7 +69,9 @@ export default function HomePage() {
 								stil til live.
 							</p>
 						</div>
-						<div className='w-1/5'><img  src={icon1} alt='scissor icon'/></div>
+						<div className='w-1/5'>
+							<img src={icon1} alt='scissor icon' />
+						</div>
 					</div>
 
 					<div className='flex my-7 xl:my-16'>
@@ -79,7 +87,9 @@ export default function HomePage() {
 								komplimentere din unikke stil.
 							</p>
 						</div>
-						<div className='w-1/5'><img  src={icon2} alt='comb icon'/></div>
+						<div className='w-1/5'>
+							<img src={icon2} alt='comb icon' />
+						</div>
 					</div>
 
 					<div className='flex '>
@@ -94,7 +104,9 @@ export default function HomePage() {
 								Gå på opdagelse i vores forskellige behandlinger udført af vores dygtige kosmetolog.
 							</p>
 						</div>
-						<div className='w-1/5'><img src={icon3} alt='mirror icon'/></div>
+						<div className='w-1/5'>
+							<img src={icon3} alt='mirror icon' />
+						</div>
 					</div>
 				</div>
 			</div>
@@ -116,9 +128,7 @@ export default function HomePage() {
 				</div>
 
 				<div className='grid grid-cols-2 gap-2 md:gap-4 md:w-3/5'>
-					<div className=''>
-						<img className='img-container-sm ' src={homeWebshop1} alt='Produkt' />
-					</div>
+					<img className='img-container-sm ' src={homeWebshop1} alt='Produkt' />
 					<img className='img-container-sm ' src={homeWebshop2} alt='Produkt' />
 					<img className='img-container-sm ' src={homeWebshop3} alt='Produkt' />
 					<img className='img-container-sm ' src={homeWebshop4} alt='Produkt' />

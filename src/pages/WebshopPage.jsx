@@ -1,26 +1,31 @@
 import { Link } from 'react-router-dom';
 import Product from '../components/Product';
 import webshopHeader from '/src/assets/webshop-header.jpg';
-import webshopHeaderMobile from '/src/assets/webshop-header-mobile.jpg';
 import arrowRight from '/src/assets/arrow-right.svg';
+import { useEffect, useState } from 'react';
+import FilterOptions from '../components/FilterOptions';
 
 export default function WebshopPage() {
+	const [data, setData] = useState([]);
+	// Hook som sørger for at siden starter fra toppen når den renderes
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
+	const handleFetchData = (fetchedData) => {
+		setData(fetchedData);
+	};
 	return (
 		<section>
 			<div className='flex justify-end'>
-				<div>
-					<img
-						src={webshopHeaderMobile}
-						alt='Image of The moisturizer conditioner from Curology'
-						className='absolute top-0 left-0 -z-50 object-cover md:hidden'
-					/>
+				<div className='absolute top-0 left-0 -z-50 h-72 md:h-auto'>
 					<img
 						src={webshopHeader}
 						alt='Image of The moisturizer conditioner from Curology'
-						className='hidden absolute top-0 left-0 -z-50 object-cover md:block'
+						className=' img-container rounded-none object-left max-h-full max-w-full'
 					/>
 				</div>
-				<div className='w-1/2 pt-8 pl-5 md:pt-3 xl:pt-16'>
+				<div className='w-1/2 pt-8 pl-6 md:pt-3 xl:pt-16'>
 					<h1 className='title3 text-sm pb-1 md:text-3xl md:pb-3 xl:text-4xl'>Nyhed</h1>
 					<h2 className='title2 text-xl leading-none md:title2'>The moisturizer conditioner</h2>
 					<h3 className='bodytext2 md:text-xl xl:text-3xl'>fra Curology</h3>
@@ -32,6 +37,8 @@ export default function WebshopPage() {
 					</Link>
 				</div>
 			</div>
+
+			<FilterOptions onFetchData={handleFetchData} />
 
 			<div className='mt-16 md:mt-20 xl:mt-44'>
 				<Product />

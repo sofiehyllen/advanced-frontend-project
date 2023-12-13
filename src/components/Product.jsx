@@ -3,31 +3,28 @@ import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io';
 import { TbShoppingBagPlus } from 'react-icons/tb';
 
 import FirebaseData from './FirebaseData';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SortingDropdown from './SortingDropdown';
 
 export default function Product() {
-
 	const [favorites, setFavorites] = useState([]);
 
-  	const handleToggleFavorite = (item) => {
-    const isFavorite = favorites.some((favorite) => favorite.id === item.id);
+	const handleToggleFavorite = (item) => {
+		const isFavorite = favorites.some((favorite) => favorite.id === item.id);
 
-    if (isFavorite) {
-		const updatedFavorites = favorites.filter((favorite) => favorite.id !== item.id);
-		setFavorites(updatedFavorites);
+		if (isFavorite) {
+			const updatedFavorites = favorites.filter((favorite) => favorite.id !== item.id);
+			setFavorites(updatedFavorites);
 		} else {
-		const updatedFavorites = [...favorites, item];
-		setFavorites(updatedFavorites);
+			const updatedFavorites = [...favorites, item];
+			setFavorites(updatedFavorites);
 		}
-  	};
+	};
 
 	useEffect(() => {
 		// Opdater localStorage, når favoritter ændres
 		localStorage.setItem('favorites', JSON.stringify(favorites));
 	}, [favorites]);
-
-
 
 	const [data, setData] = useState([]);
 	const [sorting, setSorting] = useState('title');
@@ -105,12 +102,12 @@ export default function Product() {
 								<h3 className='pr-5'>{item.title}</h3>
 							</div>
 							<div className='absolute top-0 right-0' onClick={() => handleToggleFavorite(item)}>
-            {favorites.some((favorite) => favorite.id === item.id) ? (
-              <IoMdHeart className='pt-2 pr-2 text-3xl md:pt-4 md:pr-4 md:text-6xl' />
-            ) : (
-              <IoMdHeartEmpty className='pt-2 pr-2 text-3xl md:pt-4 md:pr-4 md:text-6xl' />
-            )}
-          </div>
+								{favorites.some((favorite) => favorite.id === item.id) ? (
+									<IoMdHeart className='pt-2 pr-2 text-3xl md:pt-4 md:pr-4 md:text-6xl' />
+								) : (
+									<IoMdHeartEmpty className='pt-2 pr-2 text-3xl md:pt-4 md:pr-4 md:text-6xl' />
+								)}
+							</div>
 
 							<button
 								className='snipcart-add-item absolute bottom-0 right-0 '

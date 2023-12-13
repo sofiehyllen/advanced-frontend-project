@@ -1,28 +1,51 @@
-// FilterOptions.jsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-const FilterOptions = ({ onBrandChange, onPriceChange }) => {
+import { webshopDatabase } from '/src/firebaseConfig.js';
+
+import { onSnapshot, collection } from 'firebase/firestore';
+
+const FilterOptions = ({ onFetchData }) => {
+	const [filteredData, setFilteredData] = useState([]);
+	const [filterText, setFilterText] = useState('');
+
+	useEffect(() => {
+		const fetchData = async () => {
+			onSnapshot(collection(webshopDatabase, 'products'), (data) => {
+				const docs = [];
+				data.forEach((doc) => {
+					docs.push({ id: doc.id, ...doc.data() });
+				});
+
+				// Filtrer data baseret på filterteksten
+				const filteredDocs = docs.filter((element) =>
+					element.brand.toLowerCase().includes(filterText.toLowerCase())
+				);
+
+				setFilteredData(filteredDocs);
+
+				// Kald onFetchData med det filtrerede data
+				onFetchData(filteredDocs);
+			});
+		};
+
+		fetchData();
+	}, [onFetchData, filterText]);
+
 	return (
-		<div className='filter-options'>
-			<h2>Filtrer efter:</h2>
-			<div>
-				<label>Mærke:</label>
-				<select onChange={(e) => onBrandChange(e.target.value)}>
-					<option value=''>Alle</option>
-					<option value='Brand1'>Brand 1</option>
-					<option value='Brand2'>Brand 2</option>
-					{/* Tilføj flere mærker efter behov */}
-				</select>
-			</div>
-			<div>
-				<label>Prisområde:</label>
-				<select onChange={(e) => onPriceChange(e.target.value)}>
-					<option value=''>Alle</option>
-					<option value='0-50'>0 - 50 kr.</option>
-					<option value='50-100'>50 - 100 kr.</option>
-					{/* Tilføj flere priskategorier efter behov */}
-				</select>
-			</div>
+		<div>
+			<input
+				type='text'
+				value={filterText}
+				onChange={(e) => setFilterText(e.target.value)}
+				placeholder='Indtast filtertekst'
+			/>
+
+			{filteredData.map((element) => (
+				<div key={element.id}>
+					{element.title}
+					{/* Vis yderligere oplysninger om produktet her */}
+				</div>
+			))}
 		</div>
 	);
 };
