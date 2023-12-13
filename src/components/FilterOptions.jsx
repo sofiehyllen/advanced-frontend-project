@@ -6,7 +6,20 @@ import { onSnapshot, collection } from 'firebase/firestore';
 
 const FilterOptions = ({ onFetchData }) => {
 	const [filteredData, setFilteredData] = useState([]);
-	const [filterText, setFilterText] = useState('');
+	const [selectedBrands, setSelectedBrands] = useState([]);
+
+	const handleBrandChange = (brand) => {
+		const updatedBrands = [...selectedBrands];
+		const index = updatedBrands.indexOf(brand);
+
+		if (index === -1) {
+			updatedBrands.push(brand);
+		} else {
+			updatedBrands.splice(index, 1);
+		}
+
+		setSelectedBrands(updatedBrands);
+	};
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -16,9 +29,9 @@ const FilterOptions = ({ onFetchData }) => {
 					docs.push({ id: doc.id, ...doc.data() });
 				});
 
-				// Filtrer data baseret på filterteksten
-				const filteredDocs = docs.filter((element) =>
-					element.brand.toLowerCase().includes(filterText.toLowerCase())
+				// Filtrer data baseret på valgte brands
+				const filteredDocs = docs.filter(
+					(element) => selectedBrands.length === 0 || selectedBrands.includes(element.brand)
 				);
 
 				setFilteredData(filteredDocs);
@@ -29,16 +42,23 @@ const FilterOptions = ({ onFetchData }) => {
 		};
 
 		fetchData();
-	}, [onFetchData, filterText]);
+	}, [onFetchData, selectedBrands]);
 
 	return (
 		<div>
-			<input
-				type='text'
-				value={filterText}
-				onChange={(e) => setFilterText(e.target.value)}
-				placeholder='Indtast filtertekst'
-			/>
+			{/** Checkboxe for hvert brand */}
+			{['Mock', 'Curology', 'Lume'].map((brand) => (
+				<label key={brand}>
+					<input
+						type='checkbox'
+						checked={selectedBrands.includes(brand)}
+						onChange={() => handleBrandChange(brand)}
+					/>
+					{brand}
+				</label>
+			))}
+
+			{/* Tidligere søgefelt fjernet, da det ikke er nødvendigt med checkboxe */}
 
 			{filteredData.map((element) => (
 				<div key={element.id}>
