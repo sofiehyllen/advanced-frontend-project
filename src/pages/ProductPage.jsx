@@ -17,39 +17,48 @@ export default function ProductPage() {
 		<section>
 			<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3'>
 				<FirebaseData onFetchData={handleProductData} />
-				<img
-					className='img-container order-2 md:row-span-2 md:order-2'
-					src={product.imageUrl}
-					alt={`Image of ${product.title}`}
-				/>
-				<div className='order-first md:order-first'>
-					<h2 className='title1 pb-2 md:pb-4 xl:title3'>{product.title}</h2>
-					<div className='pb-5'>
+				<div className='mb-3 md:hidden'>
+					<h2 className='title1'>{product.title}</h2>
+					<h6 className='bodytext2 text-base'>{product.brand}</h6>
+				</div>
+				<div>
+					<img
+						src={product.productImageUrl || product.imageUrl}
+						alt={`Image of ${product.title}`}
+						className='img-container md:row-span-2 md:order-2'
+					/>
+				</div>
+				<div className='md:order-first md:pr-12'>
+					<div className='hidden md:block '>
+						<h2 className='title1 xl:title3'>{product.title}</h2>
+						<h6 className='bodytext2 text-xl'>{product.brand}</h6>
+					</div>
+					<div className='pt-3'>
 						{product.description && (
 							<>
 								{product.description.split('\\n').map((paragraph, index) => (
-									<p key={index} className='bodytext1 py-2 md:pr-12'>
+									<p key={index} className='bodytext1 text-base py-2'>
 										{paragraph}
 									</p>
 								))}
 							</>
 						)}
 					</div>
-				</div>
-				<div className='order-3 xl:order-last pt-7'>
-					<h1 className='title1 pb-2 md:pb-4 md:title3 xl:text-5xl'>{product.price} kr.</h1>
-					<button
-						className='snipcart-add-item btn '
-						data-item-id={product.id}
-						data-item-image={product.imageUrl}
-						data-item-name={product.name}
-						data-item-url={product.url}
-						data-item-price={product.price}>
-						Tilføj til kurv
-					</button>
-				</div>
 
-				<div className='order-last pt-10 md:col-start-2 xl:col-start-auto xl:order-3 xl:row-span-2 xl:flex xl:flex-col xl:justify-end xl:pl-10'>
+					<div className='flex space-x-6 my-5 md:space-x-12 xl:order-last'>
+						<h1 className='title1 pb-2 md:pb-4 md:title3 xl:text-5xl'>{product.price} kr.</h1>
+						<button
+							className='snipcart-add-item btn '
+							data-item-id={product.id}
+							data-item-image={product.imageUrl}
+							data-item-name={product.name}
+							data-item-url={product.url}
+							data-item-price={product.price}>
+							Tilføj til kurv
+						</button>
+					</div>
+				</div>
+				<div className='order-last md:mt-5 md:col-start-2 xl:col-start-auto xl:order-3 xl:row-span-2 xl:flex xl:flex-col xl:justify-end xl:pl-10'>
 					<IoMdHeartEmpty className='text-4xl md:text-5xl' />
 					<div className=''>
 						{product.brandDescription && (

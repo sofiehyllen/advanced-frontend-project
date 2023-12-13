@@ -34,13 +34,15 @@ export default function Header() {
 						</div>
 
 						<div className={isNavOpen ? 'block' : 'hidden'}>
-							<div className='flex flex-col justify-center absolute w-full h-screen top-0 left-0  bg-white z-10'>
+							<div className='flex flex-col justify-center absolute w-full h-screen top-0 left-0  bg-white z-50'>
 								<div className='absolute top-0 right-0 py-4 px-4' onClick={() => setIsNavOpen(false)}>
 									{/* Ændrer isNavOpen tilbage falsk = nav lukkes */}
 									<IoClose size={45} /> {/*Lukke ikon */}
 								</div>
-								<div className='flex flex-col items-center space-y-10 title1'>
-									<NavLink to='/'>Book tid</NavLink>
+								<div
+									className='flex flex-col items-center mx-auto space-y-10 title1 w-fit'
+									onClick={() => setIsNavOpen(false)}>
+									<a href='https://trylle-spejlet.bestilling.nu/'>Book tid</a>
 									<NavLink to='/behandlinger'>Behandlinger</NavLink>
 									<NavLink to='/about'>Mød os</NavLink>
 									<NavLink to='/contact'>Kontakt</NavLink>
@@ -52,12 +54,11 @@ export default function Header() {
 
 					{/*-- Tablet og laptop menu --*/}
 					<div className='hidden md:block space-x-10 text-base xl:text-lg'>
-						<NavLink to='/'>Book tid</NavLink>
+						<a href='https://trylle-spejlet.bestilling.nu/'>Book tid</a>
 						<NavLink to='/behandlinger'>Behandlinger</NavLink>
 						<NavLink to='/about'>Mød os</NavLink>
 						<NavLink to='/contact'>Kontakt</NavLink>
 						<NavLink to='/webshop'>Shop</NavLink>
-						
 					</div>
 				</nav>
 			</div>

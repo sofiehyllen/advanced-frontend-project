@@ -3,7 +3,7 @@ import { IoMdHeartEmpty } from 'react-icons/io';
 import { TbShoppingBagPlus } from 'react-icons/tb';
 
 import FirebaseData from './FirebaseData';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import SortingDropdown from './SortingDropdown';
 
 export default function Product() {
@@ -58,17 +58,29 @@ export default function Product() {
 				closeDropdown={closeDropdown}
 			/>
 			<div className='flex justify-end'>
-				<div className='grid grid-cols-2 gap-3 md:w-3/4 xl:w-2/3'>
+				<div className='grid grid-cols-2 gap-3 md:gap-5 xl:gap-6 md:w-3/4 xl:w-2/3'>
 					{data.map((item) => (
-						<div key={item.id} className='relative'>
+						<div key={item.id} className={`relative ${item.tallImageUrl ? 'row-span-2' : 'row-span-1'}`}>
 							<Link to={`/products/${item.id}`} className='w-fit'>
-								<div className='bg-black '>
-									<img src={item.imageUrl} alt={`Image of ${item.title}`} />
+								<div className='h-full'>
+									{item.tallImageUrl ? (
+										<img
+											src={item.tallImageUrl}
+											alt={`Tall Image of ${item.title}`}
+											className='w-full h-full object-cover'
+										/>
+									) : (
+										<img
+											src={item.imageUrl}
+											alt={`Image of ${item.title}`}
+											className='w-full h-full object-cover'
+										/>
+									)}
 								</div>
 							</Link>
 							<div className='heading3 absolute bottom-0 left-0 p-2 leading-none text-xxs space-y-1 md:space-y-0 md:p-4 md:text-lg xl:text-xl'>
 								<span>{item.price} kr.</span>
-								<h3>{item.title}</h3>
+								<h3 className='pr-5'>{item.title}</h3>
 							</div>
 							<div className='absolute top-0 right-0'>
 								<IoMdHeartEmpty className='pt-2 pr-2 text-3xl md:pt-4 md:pr-4 md:text-6xl' />
