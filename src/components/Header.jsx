@@ -14,7 +14,7 @@ export default function Header() {
 		<section>
 			<div className='flex items-center justify-between border-b border-black mb-5 md:mb-10 xl:mb-16'>
 				<div className='heading1'>
-					<NavLink to='/'><img className='w-1/5' src={logo} alt='Tryllespejlet logo'/></NavLink>
+					<NavLink to='/'><img className='w-1/2 md:w-1/4' src={logo} alt='Tryllespejlet logo'/></NavLink>
 				</div>
 
 				{/*Navigation */}
