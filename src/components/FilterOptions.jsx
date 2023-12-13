@@ -7,6 +7,7 @@ import { onSnapshot, collection } from 'firebase/firestore';
 const FilterOptions = ({ onFetchData }) => {
 	const [filteredData, setFilteredData] = useState([]);
 	const [selectedBrands, setSelectedBrands] = useState([]);
+	const [availableBrands, setAvailableBrands] = useState([]);
 
 	const handleBrandChange = (brand) => {
 		const updatedBrands = [...selectedBrands];
@@ -23,11 +24,16 @@ const FilterOptions = ({ onFetchData }) => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			onSnapshot(collection(webshopDatabase, 'products'), (data) => {
-				const docs = [];
-				data.forEach((doc) => {
-					docs.push({ id: doc.id, ...doc.data() });
-				});
+			const productsCollection = collection(webshopDatabase, 'products');
+
+			const unsubscribe = onSnapshot(productsCollection, (data) => {
+				const docs = data.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+
+				// Her hentes alle brands fra produkterne i firebase
+				const brandsSet = new Set(docs.map((element) => element.brand));
+				const brandsArray = [...brandsSet];
+
+				setAvailableBrands(brandsArray);
 
 				// Filtrer data baseret på valgte brands
 				const filteredDocs = docs.filter(
@@ -39,6 +45,8 @@ const FilterOptions = ({ onFetchData }) => {
 				// Kald onFetchData med det filtrerede data
 				onFetchData(filteredDocs);
 			});
+
+			return () => unsubscribe();
 		};
 
 		fetchData();
@@ -46,8 +54,8 @@ const FilterOptions = ({ onFetchData }) => {
 
 	return (
 		<div>
-			{/** Checkboxe for hvert brand */}
-			{['Mock', 'Curology', 'Lume'].map((brand) => (
+			{/** Checkboxe for hvert brand baseret på de tilgængelige brands fra Firebase */}
+			{availableBrands.map((brand) => (
 				<label key={brand}>
 					<input
 						type='checkbox'
@@ -58,13 +66,9 @@ const FilterOptions = ({ onFetchData }) => {
 				</label>
 			))}
 
-			{/* Tidligere søgefelt fjernet, da det ikke er nødvendigt med checkboxe */}
-
+			{/* De filtrerede data vises her */}
 			{filteredData.map((element) => (
-				<div key={element.id}>
-					{element.title}
-					{/* Vis yderligere oplysninger om produktet her */}
-				</div>
+				<div key={element.id}>{element.title}</div>
 			))}
 		</div>
 	);
