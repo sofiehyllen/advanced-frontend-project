@@ -7,6 +7,7 @@ import WebshopPage from './pages/WebshopPage';
 import ProductPage from './pages/ProductPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import Favorites from './components/Favourites';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
 				<Route path='/contact' element={<ContactPage />} />
 				<Route path='/webshop' element={<WebshopPage />} />
 				<Route path='/products/:id' element={<ProductPage />} />
+				<Route path='/favorites' element={<Favorites />} />
 				<Route path='/*' element={<Navigate to='/' />} />
 			</Routes>
 			<Footer />
