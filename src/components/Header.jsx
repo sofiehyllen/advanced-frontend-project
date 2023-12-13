@@ -5,6 +5,8 @@ import { TbShoppingBag } from 'react-icons/tb';
 import { IoMdHeart } from 'react-icons/io';
 import { useState } from 'react';
 
+import logo from '/src/assets/logo.png';
+
 export default function Header() {
 	const [isNavOpen, setIsNavOpen] = useState(false); // isNavOpen er fra start falsk = Mobil nav er lukket
 
@@ -12,14 +14,17 @@ export default function Header() {
 		<section>
 			<div className='flex items-center justify-between border-b border-black mb-5 md:mb-10 xl:mb-16'>
 				<div className='heading1'>
-					<NavLink to='/'>Logo</NavLink>
+					<NavLink to='/'><img className='w-1/5' src={logo} alt='Tryllespejlet logo'/></NavLink>
 				</div>
 
 				{/*Navigation */}
 				<nav className='flex items-center space-x-4'>
+
 					{/*Ikoner til farvoritter og indkøbskurv */}
-					<div className='flex ml-10 md:order-4'>
-						<IoMdHeart className='icon-size mr-4 xl:mr-5' />
+					<div className='flex ml-5 md:order-4'>
+					<NavLink to='/favorites'>
+              			<IoMdHeart className='icon-size mr-4 xl:mr-5' />
+            		</NavLink>
 						<button className='snipcart-checkout'>
 							<TbShoppingBag className='icon-size mr-1' />
 						</button>

@@ -7,6 +7,10 @@ import homeWebshop2 from '/src/assets/home-webshop2.jpg';
 import homeWebshop3 from '/src/assets/home-webshop3.jpg';
 import homeWebshop4 from '/src/assets/home-webshop4.jpg';
 
+import icon1 from '/src/assets/icon1.png';
+import icon2 from '/src/assets/icon2.png';
+import icon3 from '/src/assets/icon3.png';
+
 import { Link } from 'react-router-dom';
 
 export default function HomePage() {
@@ -59,7 +63,7 @@ export default function HomePage() {
 								stil til live.
 							</p>
 						</div>
-						<div className='w-1/5 bg-slate-300'></div>
+						<div className='w-1/5'><img  src={icon1} alt='scissor icon'/></div>
 					</div>
 
 					<div className='flex my-7 xl:my-16'>
@@ -75,7 +79,7 @@ export default function HomePage() {
 								komplimentere din unikke stil.
 							</p>
 						</div>
-						<div className='w-1/5 bg-slate-300'></div>
+						<div className='w-1/5'><img  src={icon2} alt='comb icon'/></div>
 					</div>
 
 					<div className='flex '>
@@ -90,7 +94,7 @@ export default function HomePage() {
 								Gå på opdagelse i vores forskellige behandlinger udført af vores dygtige kosmetolog.
 							</p>
 						</div>
-						<div className='w-1/5 bg-slate-300'></div>
+						<div className='w-1/5'><img src={icon3} alt='mirror icon'/></div>
 					</div>
 				</div>
 			</div>
