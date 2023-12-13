@@ -3,12 +3,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import { IoChevronDownSharp } from 'react-icons/io5';
 
 export default function SortingDropdown({
-	data,
 	onSortingTitleAZ,
 	onSortingTitleZA,
 	onSortingPriceHighLow,
 	onSortingPriceLowHigh,
-	closeDropdown,
 }) {
 	const [isOpen, setIsOpen] = useState(false);
 	const [activeSorting, setActiveSorting] = useState('A - Z');
