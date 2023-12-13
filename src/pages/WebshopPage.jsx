@@ -3,18 +3,13 @@ import Product from '../components/Product';
 import webshopHeader from '/src/assets/webshop-header.jpg';
 import arrowRight from '/src/assets/arrow-right.svg';
 import { useEffect, useState } from 'react';
-import FilterOptions from '../components/FilterOptions';
 
 export default function WebshopPage() {
-	const [data, setData] = useState([]);
 	// Hook som sørger for at siden starter fra toppen når den renderes
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
 
-	const handleFetchData = (fetchedData) => {
-		setData(fetchedData);
-	};
 	return (
 		<section>
 			<div className='flex justify-end'>
@@ -37,8 +32,6 @@ export default function WebshopPage() {
 					</Link>
 				</div>
 			</div>
-
-			<FilterOptions onFetchData={handleFetchData} />
 
 			<div className='mt-16 md:mt-20 xl:mt-44'>
 				<Product />

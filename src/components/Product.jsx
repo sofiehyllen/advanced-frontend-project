@@ -5,9 +5,14 @@ import { TbShoppingBagPlus } from 'react-icons/tb';
 import FirebaseData from './FirebaseData';
 import { useEffect, useState } from 'react';
 import SortingDropdown from './SortingDropdown';
+import FilterOptions from './FilterOptions';
 
 export default function Product() {
 	const [favorites, setFavorites] = useState([]);
+	const [data, setData] = useState([]);
+	const [sorting, setSorting] = useState('title');
+	const [dropdownOpen, setDropdownOpen] = useState(false);
+	const [filteredData, setFilteredData] = useState([]);
 
 	const handleToggleFavorite = (item) => {
 		const isFavorite = favorites.some((favorite) => favorite.id === item.id);
@@ -25,10 +30,6 @@ export default function Product() {
 		// Opdater localStorage, når favoritter ændres
 		localStorage.setItem('favorites', JSON.stringify(favorites));
 	}, [favorites]);
-
-	const [data, setData] = useState([]);
-	const [sorting, setSorting] = useState('title');
-	const [dropdownOpen, setDropdownOpen] = useState(false);
 
 	const handleFetchData = (fetchedData) => {
 		fetchedData.sort((a, b) => {
@@ -65,9 +66,14 @@ export default function Product() {
 		setDropdownOpen(false);
 	};
 
+	const handleBrandData = (data) => {
+		setFilteredData(data);
+	};
+
 	return (
 		<div className='relative'>
 			<FirebaseData onFetchData={handleFetchData} />
+			<FilterOptions onFetchData={handleBrandData} />
 			<SortingDropdown
 				data={data}
 				onSortingTitleAZ={handleSortingTitleAZ}
@@ -76,9 +82,10 @@ export default function Product() {
 				onSortingPriceLowHigh={handleSortingPriceLowHigh}
 				closeDropdown={closeDropdown}
 			/>
+
 			<div className='flex justify-end'>
 				<div className='grid grid-cols-2 gap-3 md:gap-5 xl:gap-6 md:w-3/4 xl:w-2/3'>
-					{data.map((item) => (
+					{filteredData.map((item) => (
 						<div key={item.id} className={`relative ${item.tallImageUrl ? 'row-span-2' : 'row-span-1'}`}>
 							<Link to={`/products/${item.id}`} className='w-fit'>
 								<div className='h-full'>

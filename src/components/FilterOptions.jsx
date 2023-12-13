@@ -23,7 +23,7 @@ const FilterOptions = ({ onFetchData }) => {
 	};
 
 	useEffect(() => {
-		const fetchData = async () => {
+		const brandData = async () => {
 			const productsCollection = collection(webshopDatabase, 'products');
 
 			const unsubscribe = onSnapshot(productsCollection, (data) => {
@@ -49,7 +49,7 @@ const FilterOptions = ({ onFetchData }) => {
 			return () => unsubscribe();
 		};
 
-		fetchData();
+		brandData();
 	}, [onFetchData, selectedBrands]);
 
 	return (
@@ -68,7 +68,7 @@ const FilterOptions = ({ onFetchData }) => {
 
 			{/* De filtrerede data vises her */}
 			{filteredData.map((element) => (
-				<div key={element.id}>{element.title}</div>
+				<div key={element.id}></div>
 			))}
 		</div>
 	);
