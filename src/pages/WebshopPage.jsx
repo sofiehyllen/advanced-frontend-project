@@ -5,6 +5,7 @@ import arrowRight from '/src/assets/arrow-right.svg';
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { pageFade } from '../components/Animations';
+
 //--- Siden for webshop ---//
 export default function WebshopPage() {
 	// Hook som sørger for at siden starter fra toppen når den renderes

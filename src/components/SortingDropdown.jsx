@@ -1,7 +1,8 @@
 // SortComponent.js
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { IoChevronDownSharp } from 'react-icons/io5';
 
+//--- Komponent for sorteringsfunktion på webshopsiden ---//
 export default function SortingDropdown({
 	onSortingTitleAZ,
 	onSortingTitleZA,

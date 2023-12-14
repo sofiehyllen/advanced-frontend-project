@@ -5,6 +5,7 @@ import { onSnapshot, collection } from 'firebase/firestore';
 
 import { IoChevronDownSharp } from 'react-icons/io5';
 
+//--- Komponent for filtreringsfunktion på webshopsiden ---//
 const FilterOptions = ({ onFetchData }) => {
 	const [filteredData, setFilteredData] = useState([]);
 	const [selectedBrands, setSelectedBrands] = useState([]);
