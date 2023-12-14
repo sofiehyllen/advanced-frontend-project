@@ -67,6 +67,19 @@ export default function Product() {
 	};
 
 	const handleBrandData = (data) => {
+		data.sort((a, b) => {
+			if (sorting === 'title') {
+				return a.title.localeCompare(b.title);
+			} else if (sorting === 'title_reverse') {
+				return b.title.localeCompare(a.title);
+			} else if (sorting === 'price') {
+				return a.price - b.price;
+			} else if (sorting === 'price_reverse') {
+				return b.price - a.price;
+			}
+			return 0;
+		});
+
 		setFilteredData(data);
 	};
 
