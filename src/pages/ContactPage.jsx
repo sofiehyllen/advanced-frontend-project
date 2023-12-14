@@ -3,13 +3,16 @@ import home1 from '/src/assets/home-1.jpg';
 import contactCard1 from '/src/assets/kontakt_kort1.jpg';
 import contactCard2 from '/src/assets/kontakt_kort2.jpg';
 import contactCard3 from '/src/assets/kontakt_kort3.jpg';
+
 import contactform from '/src/assets/contactform.jpg';
 import contactfront from '/src/assets/contactfront.jpg';
 import { FaPhone } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 
+
 // Komponent til kontakt-siden
 export default function ContactPage() {
+
   // State til at holde formular-inputværdier
   const [fornavn, setFornavn] = useState('');
   const [efternavn, setEfternavn] = useState('');
@@ -22,7 +25,9 @@ export default function ContactPage() {
     const body = encodeURIComponent(`Fornavn: ${fornavn}\nEfternavn: ${efternavn}\nEmail: ${email}\nBesked: ${besked}`);
     const mailtoLink = `mailto:kj.lerche@gmail.com?subject=${subject}&body=${body}`;
 
-    window.location.href = mailtoLink;
+
+		window.location.href = mailtoLink;
+
 
     // Nulstil formularfeltene
     setFornavn('');
