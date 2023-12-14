@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io';
 import { TbShoppingBagPlus } from 'react-icons/tb';
 
-import FirebaseData from './FirebaseData';
+//import FirebaseData from './FirebaseData';
 import { useEffect, useState } from 'react';
 import SortingDropdown from './SortingDropdown';
 import FilterOptions from './FilterOptions';
@@ -31,21 +31,10 @@ export default function Product() {
 		localStorage.setItem('favorites', JSON.stringify(favorites));
 	}, [favorites]);
 
-	const handleFetchData = (fetchedData) => {
-		fetchedData.sort((a, b) => {
-			if (sorting === 'title') {
-				return a.title.localeCompare(b.title);
-			} else if (sorting === 'title_reverse') {
-				return b.title.localeCompare(a.title);
-			} else if (sorting === 'price') {
-				return a.price - b.price;
-			} else if (sorting === 'price_reverse') {
-				return b.price - a.price;
-			}
-			return 0;
-		});
+	/*const handleFetchData = (fetchedData) => {
 		setData(fetchedData);
-	};
+	};*/
+
 	function handleSortingPriceLowHigh() {
 		setSorting('price');
 	}
@@ -67,12 +56,25 @@ export default function Product() {
 	};
 
 	const handleBrandData = (data) => {
+		data.sort((a, b) => {
+			if (sorting === 'title') {
+				return a.title.localeCompare(b.title);
+			} else if (sorting === 'title_reverse') {
+				return b.title.localeCompare(a.title);
+			} else if (sorting === 'price') {
+				return a.price - b.price;
+			} else if (sorting === 'price_reverse') {
+				return b.price - a.price;
+			}
+			return 0;
+		});
+
 		setFilteredData(data);
 	};
 
 	return (
 		<div className='relative flex'>
-			<FirebaseData onFetchData={handleFetchData} />
+			{/*<FirebaseData onFetchData={handleFetchData} />*/}
 			<FilterOptions onFetchData={handleBrandData} />
 			<div>
 				<SortingDropdown
@@ -85,7 +87,7 @@ export default function Product() {
 				/>
 
 				<div className='flex justify-end'>
-					<div className='grid grid-cols-2 gap-3 md:gap-5 xl:gap-6 md:w-3/4 xl:w-2/3'>
+					<div className='grid grid-cols-2 gap-3 w-full md:gap-5 xl:gap-6 md:pl-20 xl:w-11/12 xl:grid-cols-3'>
 						{filteredData.map((item) => (
 							<div
 								key={item.id}

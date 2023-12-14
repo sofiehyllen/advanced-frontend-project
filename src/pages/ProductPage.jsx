@@ -2,19 +2,22 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import FirebaseData from '../components/FirebaseData';
 import { IoMdHeartEmpty } from 'react-icons/io';
+import { motion } from 'framer-motion';
+import { pageFade } from '../components/Animations';
 
+//--- Siden for hvert produkt ---//
 export default function ProductPage() {
 	const [product, setProduct] = useState({});
 	const { id } = useParams();
 
+	// Opdaterer produktdata og finder det produkt der matcher id'et
 	const handleProductData = (data) => {
-		// Opdaterer produktdata, find det produkt, der matcher id'et
 		const selectedProduct = data.find((item) => item.id === id);
 		setProduct(selectedProduct || {});
 	};
 
 	return (
-		<section>
+		<motion.section variants={pageFade} initial='hidden' animate='visible'>
 			<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3'>
 				<FirebaseData onFetchData={handleProductData} />
 				<div className='mb-3 md:hidden'>
@@ -47,6 +50,7 @@ export default function ProductPage() {
 
 					<div className='flex space-x-6 my-5 md:space-x-12 xl:order-last'>
 						<h1 className='title1 pb-2 md:pb-4 md:title3 xl:text-5xl'>{product.price} kr.</h1>
+						{/* Snipcart button til indkøbskurven */}
 						<button
 							className='snipcart-add-item btn '
 							data-item-id={product.id}
@@ -74,6 +78,6 @@ export default function ProductPage() {
 				</div>
 			</div>
 			<div className='h-line'></div>
-		</section>
+		</motion.section>
 	);
 }

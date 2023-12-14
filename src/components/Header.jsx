@@ -25,7 +25,7 @@ export default function Header() {
 						<NavLink to='/favorites' className=''>
 							<IoMdHeart className='text-2xl' />
 						</NavLink>
-						<button className='flex items-center snipcart-checkout'>
+						<button className='flex items-center snipcart-checkout '>
 							<TbShoppingBag className='text-2xl' />
 							<span className='pt-1 snipcart-items-count my-auto w-5'></span>
 						</button>
@@ -42,12 +42,16 @@ export default function Header() {
 							<div className='flex flex-col justify-center absolute w-full h-screen top-0 left-0  bg-white z-50'>
 								<div className='absolute top-0 right-0 py-4 px-4' onClick={() => setIsNavOpen(false)}>
 									{/* Ændrer isNavOpen tilbage falsk = nav lukkes */}
-									<IoClose size={45} /> {/*Lukke ikon */}
+									<IoClose size={55} /> {/*Lukke ikon */}
 								</div>
 								<div
 									className='flex flex-col items-center mx-auto space-y-10 title1 w-fit'
 									onClick={() => setIsNavOpen(false)}>
-									<a href='https://trylle-spejlet.bestilling.nu/'>Book tid</a>
+									<NavLink to='/'>Hjem</NavLink>
+									<button className='flex items-center space-x-3'>
+										<a href='https://trylle-spejlet.bestilling.nu/'>Book tid</a>
+										<img className='h-6' src={arrowBlack} alt='Black arrow' />
+									</button>
 									<NavLink to='/behandlinger'>Behandlinger</NavLink>
 									<NavLink to='/about'>Mød os</NavLink>
 									<NavLink to='/contact'>Kontakt</NavLink>
@@ -69,6 +73,16 @@ export default function Header() {
 						<NavLink to='/about'>Mød os</NavLink>
 						<NavLink to='/contact'>Kontakt</NavLink>
 						<NavLink to='/webshop'>Shop</NavLink>
+					</div>
+
+					{/*---Dansk / Engelsk sprog ---*/}
+					<div className='hidden md:flex order-last text-sm'>
+						<div className='v-line m-0 mr-6'></div>
+						<a className='underline' href='#'>
+							DA
+						</a>
+						<p className='px-1'>/</p>
+						<a href='#'>EN</a>
 					</div>
 				</nav>
 			</div>
