@@ -55,18 +55,22 @@ const FilterOptions = ({ onFetchData }) => {
 	return (
 		<div>
 			{/** Checkboxe for hvert brand baseret på de tilgængelige brands fra Firebase */}
-			{availableBrands.map((brand) => (
-				<label key={brand}>
-					<input
-						type='checkbox'
-						checked={selectedBrands.includes(brand)}
-						onChange={() => handleBrandChange(brand)}
-					/>
-					{brand}
-				</label>
-			))}
+			<div className='flex flex-col space-y-5 w-max'>
+				{availableBrands.map((brand) => (
+					<label key={brand} className='cursor-pointer heading3'>
+						<input
+							className='mr-2 cursor-pointer'
+							type='checkbox'
+							checked={selectedBrands.includes(brand)}
+							onChange={() => handleBrandChange(brand)}
+						/>
+						{brand}
+					</label>
+				))}
+			</div>
 
 			{/* De filtrerede data vises her */}
+
 			{filteredData.map((element) => (
 				<div key={element.id}></div>
 			))}
