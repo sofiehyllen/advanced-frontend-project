@@ -1,9 +1,8 @@
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io';
 import { TbShoppingBagPlus } from 'react-icons/tb';
-
 import FirebaseData from './FirebaseData';
-import { useState, useEffect } from 'react';
 import SortingDropdown from './SortingDropdown';
 
 export default function Product() {
@@ -14,7 +13,6 @@ export default function Product() {
 
   const [data, setData] = useState([]);
   const [sorting, setSorting] = useState('title');
-  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const handleFetchData = (fetchedData) => {
     fetchedData.sort((a, b) => {
@@ -52,11 +50,6 @@ export default function Product() {
     setDropdownOpen(false);
   };
 
-  useEffect(() => {
-    // Opdater localStorage, når favoritter ændres
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-  }, [favorites]);
-
   const handleToggleFavorite = (item) => {
     const isFavorite = favorites.some((favorite) => favorite.id === item.id);
 
@@ -68,6 +61,11 @@ export default function Product() {
       setFavorites(updatedFavorites);
     }
   };
+
+  useEffect(() => {
+    // Opdater localStorage, når favoritter ændres
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }, [favorites]);
 
   return (
     <div className='relative'>

@@ -8,12 +8,15 @@ import contactfront from '/src/assets/contactfront.jpg';
 import { FaPhone } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 
+// Komponent til kontakt-siden
 export default function ContactPage() {
+  // State til at holde formular-inputværdier
   const [fornavn, setFornavn] = useState('');
   const [efternavn, setEfternavn] = useState('');
   const [email, setEmail] = useState('');
   const [besked, setBesked] = useState('');
 
+  // Funktion til at sende email ved at åbne mailto-link i browseren
   const sendEmail = () => {
     const subject = encodeURIComponent('Ny kontaktformularbesked');
     const body = encodeURIComponent(`Fornavn: ${fornavn}\nEfternavn: ${efternavn}\nEmail: ${email}\nBesked: ${besked}`);
@@ -21,7 +24,7 @@ export default function ContactPage() {
 
     window.location.href = mailtoLink;
 
-    // Nulstil formularfeltene hvis nødvendigt
+    // Nulstil formularfeltene
     setFornavn('');
     setEfternavn('');
     setEmail('');
@@ -30,19 +33,24 @@ export default function ContactPage() {
 
   return (
     <section>
+      {/* Layout for kontaktsektion */}
       <div className='md:flex'>
+        {/* Billede til venstre */}
         <div className='md:order-2 md:pl-5 xl:w-full xl:h-full'>
           <img className='img-container' src={contactfront} alt='Woman' />
         </div>
+        {/* Tekstindhold til højre */}
         <div className='pt-5 md:p-0 md:w-11/12'>
           <h2 className='heading3 pb-3'>Sig hej!</h2>
           <h1 className='title1'>Kontakt os</h1>
           <p className='bodytext1 xl:w-2/3 pt-1'>
-            Har du spørgsmål, ønsker en aftale eller vil dele dine tanker med os? Vi er her for at lytte. Du er altid velkommen til at ringe ind med spørgsmål, eller sende os en email, for at komme i forbindelse med vores dedikerede team. 
+            {/* Kontaktinformation og velkomsttekst */}
+            Har du spørgsmål, ønsker en aftale eller vil dele dine tanker med os? Vi er her for at lytte. Du er altid velkommen til at ringe ind med spørgsmål, eller sende os en email, for at komme i forbindelse med vores dedikerede team.
             <br></br><br></br>
             Vi ser altid frem til at høre fra dig og hjælpe med dine behov. Din skønhed og tilfredshed er vores prioritet.
           </p>
           <div className='h-line my-5'></div>
+          {/* Kontaktinformation */}
           <div>
             <div className='flex items-center'>
               <FaPhone className='ml-5 text-2xl md:text-4xl'/>
@@ -58,9 +66,12 @@ export default function ContactPage() {
         </div>
       </div>
 
+      {/* Sektion for at finde virksomheden */}
       <div>
         <h2 className='heading3 mt-16'>Find os</h2>
+        {/* Grid til kort og links */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6">
+          {/* Kort 1 */}
           <div className="border border-black p-4 ">
             <a href="https://www.google.com/maps/search/?api=1&query=Skagensvej+46,+9982+%C3%85lb%C3%A6k" target="_blank" rel="noopener noreferrer">
               <img  src={contactCard1} alt='img link' /> 
@@ -68,7 +79,7 @@ export default function ContactPage() {
               <p className="text-left title1 text-sm md:text-xl xl:text-3xl">Skagensvej 46, 9982 Ålbæk</p>
             </a>
           </div>
-
+          {/* Kort 2 */}
           <div className="border border-black p-4">
             <a href="#" target="_blank" rel="noopener noreferrer">
               <img  src={contactCard2} alt='img link' /> 
@@ -76,7 +87,7 @@ export default function ContactPage() {
               <p className="text-left title1 text-sm md:text-xl xl:text-3xl">Tilmeld vores nyhedsbrev</p>
             </a>
           </div>
-
+          {/* Kort 3 */}
           <div className="border border-black p-4">
             <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
               <img  src={contactCard3} alt='img link' /> 
@@ -86,19 +97,24 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+
+      {/* Sektion for kontaktformular */}
       <div className='md:flex md:mb-16 xl:mt-24'>
         <div className=' md:mr-10'>
+          {/* Tekst og introduktion til kontaktformular */}
           <div className='mt-14 md:p-0 '>
             <h2 className='heading3 xl:pb-4 xl:pt-10'>Skriv til os</h2>
             <p className='bodytext1 pt-5 pb-5 md:pr-2 xl:pb-14 '>
+              {/* Instruktion og introduktion til at udfylde kontaktformularen */}
               Udfyld venligst kontaktformularen nedenfor, hvis du ønsker at sende os en besked eller har spørgsmål. 
               <br></br><br></br>
               Vi værdsætter din tid, og vores team vil gøre deres bedste for at vende tilbage til dig så hurtigt som muligt – vi ser frem til at betjene dig!
             </p>
           </div>
-
+          {/* Kontaktformular */}
           <form className="contact-form border border-black p-5 " onSubmit={sendEmail}>
             <h1 className='title2 pb-8 md:text-4xl pt-5 '>Kontaktformular</h1>
+            {/* Inputfelter for fornavn, efternavn, email og besked */}
             <div>
               <input 
                 className="form-input heading3"
@@ -142,6 +158,7 @@ export default function ContactPage() {
               />
               <hr className="border-t border-black pb-2 xl:pb-7"></hr>
             </div>
+            {/* Send-knap til at udføre sendEmail-funktionen */}
             <div>
               <button 
                 className="btn xl:mb-2" 
@@ -153,6 +170,7 @@ export default function ContactPage() {
             </div>
           </form>
         </div>
+        {/* Billede til højre, skjult på mindre skærme */}
         <div className='hidden md:block md:mt-28 md:w-fit xl:mt-20 xl:w-2/3'>
           <img className='img-container xl:h-5/6' src={contactform} alt='Product image' />
         </div>
