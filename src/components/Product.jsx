@@ -1,9 +1,12 @@
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io';
 import { TbShoppingBagPlus } from 'react-icons/tb';
 
-//import FirebaseData from './FirebaseData';
+import FirebaseData from './FirebaseData';
+
 import { useEffect, useState } from 'react';
+
 import SortingDropdown from './SortingDropdown';
 import FilterOptions from './FilterOptions';
 
@@ -13,6 +16,11 @@ export default function Product() {
 	const [sorting, setSorting] = useState('title');
 	const [dropdownOpen, setDropdownOpen] = useState(false);
 	const [filteredData, setFilteredData] = useState([]);
+
+  const [favorites, setFavorites] = useState(() => {
+    const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    return storedFavorites;
+  });
 
 	const handleToggleFavorite = (item) => {
 		const isFavorite = favorites.some((favorite) => favorite.id === item.id);

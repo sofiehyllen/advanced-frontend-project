@@ -14,9 +14,11 @@ export default function Header() {
 	return (
 		<section>
 			<div className='flex items-center justify-between border-b border-black mb-5 md:mb-10 xl:mb-16'>
+
 				<NavLink to='/'>
 					<img className='w-24 md:w-36 md:mb-1 xl:w-44' src={logo} alt='Tryllespejlet logo' />
 				</NavLink>
+
 
 				{/*Navigation */}
 				<nav className='flex items-center space-x-4'>
