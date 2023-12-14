@@ -4,6 +4,7 @@ import { IoClose } from 'react-icons/io5';
 import { TbShoppingBag } from 'react-icons/tb';
 import { IoMdHeart } from 'react-icons/io';
 import { useState } from 'react';
+import arrowBlack from '/src/assets/arrow-right-up-black.svg';
 
 import logo from '/src/assets/logo.png';
 
@@ -13,22 +14,21 @@ export default function Header() {
 	return (
 		<section>
 			<div className='flex items-center justify-between border-b border-black mb-5 md:mb-10 xl:mb-16'>
-				<div className='heading1'>
-					<NavLink to='/'><img className='w-1/5' src={logo} alt='Tryllespejlet logo'/></NavLink>
-				</div>
+				<NavLink to='/'>
+					<img className='w-24 md:w-36 md:mb-1 xl:w-44' src={logo} alt='Tryllespejlet logo' />
+				</NavLink>
 
 				{/*Navigation */}
 				<nav className='flex items-center space-x-4'>
-
 					{/*Ikoner til farvoritter og indkøbskurv */}
-					<div className='flex ml-5 md:order-4'>
-					<NavLink to='/favorites'>
-              			<IoMdHeart className='icon-size mr-4 xl:mr-5' />
-            		</NavLink>
-						<button className='snipcart-checkout'>
-							<TbShoppingBag className='icon-size mr-1' />
+					<div className='flex items-center space-x-3 md:ml-10 md:order-4'>
+						<NavLink to='/favorites' className=''>
+							<IoMdHeart className='text-2xl' />
+						</NavLink>
+						<button className='flex items-center snipcart-checkout'>
+							<TbShoppingBag className='text-2xl' />
+							<span className='pt-1 snipcart-items-count my-auto w-5'></span>
 						</button>
-						<span className='snipcart-items-count pt-1'></span>
 					</div>
 
 					{/*-- Mobile menu --*/}
@@ -58,8 +58,13 @@ export default function Header() {
 					</section>
 
 					{/*-- Tablet og laptop menu --*/}
-					<div className='hidden md:block space-x-10 text-base xl:text-lg'>
-						<a href='https://trylle-spejlet.bestilling.nu/'>Book tid</a>
+					<div className='hidden md:flex items-center space-x-6 text-base xl:text-lg'>
+						<div className='flex items-center w-fit bg-transparent outline text-black h-5 px-1 xl:h-6 xl:px-2 rounded-sm'>
+							<a className='leading-none' href='https://trylle-spejlet.bestilling.nu/' target='_blank'>
+								Book tid
+							</a>
+							<img className='pl-2' src={arrowBlack} alt='Black arrow' />
+						</div>
 						<NavLink to='/behandlinger'>Behandlinger</NavLink>
 						<NavLink to='/about'>Mød os</NavLink>
 						<NavLink to='/contact'>Kontakt</NavLink>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import logo from '/src/assets/logo.png';
 
 export default function Footer() {
 	return (
@@ -18,7 +19,7 @@ export default function Footer() {
 					</button>
 				</div>
 
-				<div className='md:mx-auto'>
+				<div className='md:mx-auto xl:mx-0 xl:flex xl:justify-start'>
 					<div className='flex flex-col items-end md:items-start'>
 						<h4>Kontakt</h4>
 						<a href='#' className='text-zinc-500 hover:text-inherit w-fit'>
@@ -34,10 +35,12 @@ export default function Footer() {
 				</div>
 
 				<div className='flex justify-center items-center col-span-2 order-5 md:col-span-4 xl:col-span-1 xl:order-none'>
-					<h1 className='heading1'>Logo</h1>
+					<Link to='/'>
+						<img className='w-24 md:w-36 md:mb-1 xl:w-44' src={logo} alt='Tryllespejlet logo' />
+					</Link>
 				</div>
 
-				<div className='md:mx-auto'>
+				<div className='md:mx-auto xl:mx-0 xl:flex xl:justify-end'>
 					<div className='flex flex-col'>
 						<h4>Data</h4>
 						<Link className='text-zinc-500 hover:text-inherit w-fit' to='/'>
