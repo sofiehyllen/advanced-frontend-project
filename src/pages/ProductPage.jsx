@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import FirebaseData from '../components/FirebaseData';
 import { IoMdHeartEmpty } from 'react-icons/io';
+import { motion } from 'framer-motion';
 
 export default function ProductPage() {
 	const [product, setProduct] = useState({});
@@ -14,7 +15,7 @@ export default function ProductPage() {
 	};
 
 	return (
-		<section>
+		<motion.section variants={pageFade} initial='hidden' animate='visible'>
 			<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3'>
 				<FirebaseData onFetchData={handleProductData} />
 				<div className='mb-3 md:hidden'>
@@ -74,6 +75,6 @@ export default function ProductPage() {
 				</div>
 			</div>
 			<div className='h-line'></div>
-		</section>
+		</motion.section>
 	);
 }

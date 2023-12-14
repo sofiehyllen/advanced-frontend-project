@@ -7,6 +7,8 @@ import homeWebshop1 from '/src/assets/home-webshop1.jpg';
 import homeWebshop2 from '/src/assets/home-webshop2.jpg';
 import homeWebshop3 from '/src/assets/home-webshop3.jpg';
 import homeWebshop4 from '/src/assets/home-webshop4.jpg';
+import { motion } from 'framer-motion';
+import { pageFade } from '../components/Animations';
 
 import icon1 from '/src/assets/icon1.png';
 import icon2 from '/src/assets/icon2.png';
@@ -14,14 +16,23 @@ import icon3 from '/src/assets/icon3.png';
 
 import { Link } from 'react-router-dom';
 
+//--- Siden for forsiden ---//
 export default function HomePage() {
 	// Hook som sørger for at siden starter fra toppen når den renderes
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
 
+	const visible = { opacity: 1, y: 0, transition: { duration: 0.5 } };
+
+	const itemVariants = {
+		hidden: { opacity: 0, y: 10 },
+		visible,
+	};
+
 	return (
-		<section>
+		<motion.section variants={pageFade} initial='hidden' animate='visible'>
+			{/*--- Hero sektion ---*/}
 			<div className='md:flex'>
 				<div className='md:order-2 md:pl-5 xl:w-full'>
 					<img className='img-container' src={home1} alt='Woman' />
@@ -41,6 +52,7 @@ export default function HomePage() {
 
 			<div className='h-line'></div>
 
+			{/*--- Behandlinger sektion ---*/}
 			<div className='md:flex xl:w-11/12 xl:mx-auto'>
 				<div
 					className='bg-cover bg-right rounded-img-sm p-5 pl-7 mb-5 md:m-0 md:p-8 md:w-9/12 xl:w-1/2 xl:p-12'
@@ -113,6 +125,7 @@ export default function HomePage() {
 
 			<div className='h-line'></div>
 
+			{/*--- Webshop sektion ---*/}
 			<div className='md:flex md:space-x-5'>
 				<div className='bodytext1 md:w-1/2 xl:w-2/5'>
 					<h1 className='title1 md:title2'>Nyt i vores Webshop</h1>
@@ -134,6 +147,6 @@ export default function HomePage() {
 					<img className='img-container-sm ' src={homeWebshop4} alt='Produkt' />
 				</div>
 			</div>
-		</section>
+		</motion.section>
 	);
 }

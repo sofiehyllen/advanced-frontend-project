@@ -6,10 +6,12 @@ import arrowRight from '/src/assets/arrow-right.svg';
 import arrowRightUp from '/src/assets/arrow-right-up.svg';
 
 import { IoChevronForwardSharp } from 'react-icons/io5';
+import { pageFade } from '../components/Animations';
+import { motion } from 'framer-motion';
 
 export default function BehandlingerPage() {
 	return (
-		<section>
+		<motion.section variants={pageFade} initial='hidden' animate='visible'>
 			<div className='md:flex'>
 				<div className='md:order-2 md:w-5/6 md:pl-8 xl:w-2/3'>
 					<h1 className='title1 md:title2'>Tid til forandring?</h1>
@@ -351,6 +353,6 @@ export default function BehandlingerPage() {
 					</div>
 				</div>
 			</div>
-		</section>
+		</motion.section>
 	);
 }

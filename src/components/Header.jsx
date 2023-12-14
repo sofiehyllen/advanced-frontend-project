@@ -5,6 +5,7 @@ import { TbShoppingBag } from 'react-icons/tb';
 import { IoMdHeart } from 'react-icons/io';
 import { useState } from 'react';
 import arrowBlack from '/src/assets/arrow-right-up-black.svg';
+import { motion } from 'framer-motion';
 
 import logo from '/src/assets/logo.png';
 
@@ -42,12 +43,16 @@ export default function Header() {
 							<div className='flex flex-col justify-center absolute w-full h-screen top-0 left-0  bg-white z-50'>
 								<div className='absolute top-0 right-0 py-4 px-4' onClick={() => setIsNavOpen(false)}>
 									{/* Ændrer isNavOpen tilbage falsk = nav lukkes */}
-									<IoClose size={45} /> {/*Lukke ikon */}
+									<IoClose size={55} /> {/*Lukke ikon */}
 								</div>
 								<div
 									className='flex flex-col items-center mx-auto space-y-10 title1 w-fit'
 									onClick={() => setIsNavOpen(false)}>
-									<a href='https://trylle-spejlet.bestilling.nu/'>Book tid</a>
+									<NavLink to='/'>Hjem</NavLink>
+									<button className='flex items-center space-x-3'>
+										<a href='https://trylle-spejlet.bestilling.nu/'>Book tid</a>
+										<img className='h-6' src={arrowBlack} alt='Black arrow' />
+									</button>
 									<NavLink to='/behandlinger'>Behandlinger</NavLink>
 									<NavLink to='/about'>Mød os</NavLink>
 									<NavLink to='/contact'>Kontakt</NavLink>
