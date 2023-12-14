@@ -15,7 +15,7 @@ export default function AboutPage() {
 					<h1 className='title1'>Tryllespejlet, din favorit frisør i Ålbæk.</h1>
 				</div>
 				<div className='v-line'></div>
-				<div className='h-line'></div>
+
 				<div className='md:order-2 md:pl-5 xl:w-full'>
 					<p className='bodytext1 pt-5'>
 						Velkommen til din lokale frisørsalon i hjertet af Ålbæk, hvor skønhed og stil forenes. Vi er
@@ -31,13 +31,14 @@ export default function AboutPage() {
 						deler en passion for skønhed og håndværk.
 					</p>
 				</div>
-				<div className='h-line'></div>
 			</div>
 
+			<div className='h-line'></div>
+
 			<div>
-				<div className='pt-3  md:pt-20'>
+				<div>
 					<h2 className='heading3'>HVEM ER VI?</h2>
-					<br></br>
+					<br />
 					<h1 className='title1'>Vores ansatte</h1>
 					<p className='bodytext1 max-w-2xl pt-5'>
 						Mød vores passionerede team af erfarne frisører, dedikerede kosmetologer, dygtige barberere og
@@ -49,7 +50,9 @@ export default function AboutPage() {
 				</div>
 			</div>
 
-			<div className='md:flex pt-20 pb-20 '>
+			<div className='h-line'></div>
+
+			<div className='md:flex mx-auto  md:pb-20 md:w-10/12 '>
 				<div className='pt-5 md:p-0'>
 					<h2 className='heading3'>FØLG MED</h2>
 					<br></br>
@@ -57,20 +60,20 @@ export default function AboutPage() {
 				</div>
 				<div className='v-line'></div>
 				<div className='h-line'></div>
-				<div className='flex md:block md:mb-3'>
+				<div className='flex md:block'>
 					<a
 						href='https://www.facebook.com/profile.php?id=100063619180976'
 						target='_blank'
 						rel='noopener noreferrer'>
-						<BsFacebook className='text-3xl mt-0.5 mr-6 ml-1 md:mb-6 md:mt-32 ' />
+						<BsFacebook className='text-6xl text-gray-300 mr-6 mt-1 ml-1 md:mb-12 md:mt-24 xl:mt-32' />
 					</a>
 					<a href='https://www.instagram.com/tryllespejlet' target='_blank' rel='noopener noreferrer'>
-						<AiFillInstagram className='text-4xl md:mr-6' />
+						<AiFillInstagram className='text-7xl text-gray-300 md:mr-6' />
 					</a>
 				</div>
 
 				<div className='md:order-2'>
-					<p className='bodytext1  pt-5  md:mt-16 md:ml-5'>
+					<p className='bodytext1  pt-5  md:mt-16 md:ml-5 xl:mt-32'>
 						Følg med på vores sociale medier for opdateringer, skønhedstips og særlige tilbud. Bliv en del
 						af vores fællesskab og del din skønhedsrejse med os.
 						<br></br>

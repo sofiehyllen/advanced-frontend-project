@@ -37,7 +37,7 @@ export default function SortingDropdown({
 	};
 
 	return (
-		<section className='sticky top-0 pt-4 bg-white z-30'>
+		<section className='sticky top-0 pt-4 bg-white z-20'>
 			<div className='relative flex items-center justify-end pb-3 heading3 text-xs md:text-base'>
 				<p className='  xl:text-xl'>Sortér: </p>
 				<button

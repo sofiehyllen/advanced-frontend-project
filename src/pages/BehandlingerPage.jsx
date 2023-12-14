@@ -8,8 +8,14 @@ import arrowRightUp from '/src/assets/arrow-right-up.svg';
 import { IoChevronForwardSharp } from 'react-icons/io5';
 import { pageFade } from '../components/Animations';
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 export default function BehandlingerPage() {
+	// Hook som sørger for at siden starter fra toppen når den renderes
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	return (
 		<motion.section variants={pageFade} initial='hidden' animate='visible'>
 			<div className='md:flex'>
@@ -36,7 +42,7 @@ export default function BehandlingerPage() {
 						<div className='h-line m-0 md:mt-2'></div>
 					</summary>
 
-					<div className='pl-4 pr-28 py-5 space-y-5 md:p-0 md:space-y-0 md:py-10 md:pl-10 md:grid md:grid-cols-2 md:gap-y-12 xl:gap-y-20 xl:py-16'>
+					<div className=' pl-4 pr-28 py-5 space-y-5 md:p-0 md:space-y-0 md:py-10 md:pl-10 md:grid md:grid-cols-2 md:gap-y-12 xl:gap-y-20 xl:py-16'>
 						<div className='md:w-2/3  xl:pl-16'>
 							<h3 className='heading1 pb-1 md:pb-2 xl:p-0'>Dameklip</h3>
 							<div className='flex justify-between bodytext1 text-sm p-0 md:bodytext1 xl:pt-3'>

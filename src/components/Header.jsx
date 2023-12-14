@@ -5,7 +5,6 @@ import { TbShoppingBag } from 'react-icons/tb';
 import { IoMdHeart } from 'react-icons/io';
 import { useState } from 'react';
 import arrowBlack from '/src/assets/arrow-right-up-black.svg';
-import { motion } from 'framer-motion';
 
 import logo from '/src/assets/logo.png';
 
@@ -26,7 +25,7 @@ export default function Header() {
 						<NavLink to='/favorites' className=''>
 							<IoMdHeart className='text-2xl' />
 						</NavLink>
-						<button className='flex items-center snipcart-checkout'>
+						<button className='flex items-center snipcart-checkout '>
 							<TbShoppingBag className='text-2xl' />
 							<span className='pt-1 snipcart-items-count my-auto w-5'></span>
 						</button>
@@ -74,6 +73,16 @@ export default function Header() {
 						<NavLink to='/about'>Mød os</NavLink>
 						<NavLink to='/contact'>Kontakt</NavLink>
 						<NavLink to='/webshop'>Shop</NavLink>
+					</div>
+
+					{/*---Dansk / Engelsk sprog ---*/}
+					<div className='hidden md:flex order-last text-sm'>
+						<div className='v-line m-0 mr-6'></div>
+						<a className='underline' href='#'>
+							DA
+						</a>
+						<p className='px-1'>/</p>
+						<a href='#'>EN</a>
 					</div>
 				</nav>
 			</div>

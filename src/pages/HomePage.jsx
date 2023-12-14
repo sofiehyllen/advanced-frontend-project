@@ -76,7 +76,7 @@ export default function HomePage() {
 						</div>
 						<div className='w-fit border-b border-black pb-7 md:ml-3 xl:pb-14'>
 							<h4 className='heading1 leading-none'>Klip</h4>
-							<p className='bodytext1 pr-2 pt-1'>
+							<p className='bodytext1 pr-2 pt-3'>
 								Nyd en skræddersyet klipbehandling, hvor vores erfarne stylister bringer din personlige
 								stil til live.
 							</p>
@@ -94,7 +94,7 @@ export default function HomePage() {
 						</div>
 						<div className='w-fit border-b border-black pb-7 md:ml-3 xl:pb-14'>
 							<h4 className='heading1 leading-none'>Farve</h4>
-							<p className='bodytext1 pr-2 pt-1 xl:w-5/6'>
+							<p className='bodytext1 pr-2 pt-3 xl:w-5/6'>
 								Nyd en personlig farvebehandling, hvor vi skaber den perfekte nuance til at
 								komplimentere din unikke stil.
 							</p>
@@ -111,8 +111,8 @@ export default function HomePage() {
 							</div>
 						</div>
 						<div className='w-fit md:ml-3'>
-							<h4 className='heading1 leading-none'>Behandlinger</h4>
-							<p className='bodytext1 pr-2 pt-1'>
+							<h4 className='heading1 leading-none'>Kurbehandlinger</h4>
+							<p className='bodytext1 pr-2 pt-3'>
 								Gå på opdagelse i vores forskellige behandlinger udført af vores dygtige kosmetolog.
 							</p>
 						</div>
@@ -128,13 +128,18 @@ export default function HomePage() {
 			{/*--- Webshop sektion ---*/}
 			<div className='md:flex md:space-x-5'>
 				<div className='bodytext1 md:w-1/2 xl:w-2/5'>
+					<p className='heading3'>Webshop</p>
 					<h1 className='title1 md:title2'>Nyt i vores Webshop</h1>
-					<p className='py-3 md:pt-3 xl:pb-10 xl:pt-6'>
-						Træd ind i vores virtuelle frisørverden! Udforsk vores webshop, hvor du finder eksklusive
-						hårprodukter og stylingredskaber håndplukket af vores erfarne stylister.
-					</p>
-					<p>Skab salonkvalitet derhjemme og få en frisk, moderne stil med vores nøje udvalgte sortiment.</p>
-					<Link to='/webshop' className='btn mt-5 mb-7 xl:mt-20'>
+					<div className='py-3 space-y-5 md:pt-3 md:pr-10 xl:pb-10 xl:pt-6 xl:pr-32'>
+						<p>
+							Træd ind i vores virtuelle frisørverden! Udforsk vores webshop, hvor du finder eksklusive
+							hårprodukter og stylingredskaber håndplukket af vores erfarne stylister.
+						</p>
+						<p>
+							Skab salonkvalitet derhjemme og få en frisk, moderne stil med vores nøje udvalgte sortiment.
+						</p>
+					</div>
+					<Link to='/webshop' className='btn mt-5 mb-7 xl:mt-10'>
 						<button className='leading-none'>Til webshop</button>
 						<img src={arrowRight} alt='arrow-right' />
 					</Link>
