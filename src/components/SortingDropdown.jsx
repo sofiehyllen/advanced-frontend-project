@@ -3,15 +3,9 @@ import React, { useState } from 'react';
 import { IoChevronDownSharp } from 'react-icons/io5';
 
 //--- Komponent for sorteringsfunktion på webshopsiden ---//
-export default function SortingDropdown({
-	onSortingTitleAZ,
-	onSortingTitleZA,
-	onSortingPriceHighLow,
-	onSortingPriceLowHigh,
-}) {
+export default function SortingDropdown({ onSortingTitleAZ, onSortingTitleZA, onSortingPriceHighLow, onSortingPriceLowHigh }) {
 	const [isOpen, setIsOpen] = useState(false);
 	const [activeSorting, setActiveSorting] = useState('A - Z');
-	//const dropdownRef = useRef(null);
 
 	const handleSortingPriceLowHigh = () => {
 		onSortingPriceLowHigh();

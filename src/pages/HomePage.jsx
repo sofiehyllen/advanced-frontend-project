@@ -146,10 +146,42 @@ export default function HomePage() {
 				</div>
 
 				<div className='grid grid-cols-2 gap-2 md:gap-4 md:w-3/5'>
-					<img className='img-container-sm ' src={homeWebshop1} alt='Produkt' />
-					<img className='img-container-sm ' src={homeWebshop2} alt='Produkt' />
-					<img className='img-container-sm ' src={homeWebshop3} alt='Produkt' />
-					<img className='img-container-sm ' src={homeWebshop4} alt='Produkt' />
+					<Link
+						to='/products/act_acre_hairmask'
+						className='relative overflow-hidden bg-cover bg-no-repeat rounded-img-xs md:rounded-img-sm xl:rounded-img-md'>
+						<img
+							className='img-container-sm rounded-none transition duration-300 ease-in-out hover:scale-110'
+							src={homeWebshop1}
+							alt='Produkt'
+						/>
+					</Link>
+					<Link
+						to='/products/stay_in_place_hair_wax_mock'
+						className='relative overflow-hidden bg-cover bg-no-repeat rounded-img-xs md:rounded-img-sm xl:rounded-img-md'>
+						<img
+							className='img-container-sm rounded-none transition duration-300 ease-in-out hover:scale-110'
+							src={homeWebshop2}
+							alt='Produkt'
+						/>
+					</Link>
+					<Link
+						to='/products/curology_shampoo'
+						className='relative overflow-hidden bg-cover bg-no-repeat rounded-img-xs md:rounded-img-sm xl:rounded-img-md'>
+						<img
+							className='img-container-sm rounded-none transition duration-300 ease-in-out hover:scale-110'
+							src={homeWebshop3}
+							alt='Produkt'
+						/>
+					</Link>
+					<Link
+						to='/'
+						className='relative overflow-hidden bg-cover bg-no-repeat rounded-img-xs md:rounded-img-sm xl:rounded-img-md'>
+						<img
+							className='img-container-sm rounded-none transition duration-300 ease-in-out hover:scale-110'
+							src={homeWebshop4}
+							alt='Produkt'
+						/>
+					</Link>
 				</div>
 			</div>
 		</motion.section>

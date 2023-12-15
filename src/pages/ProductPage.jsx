@@ -18,8 +18,8 @@ export default function ProductPage() {
 
 	return (
 		<motion.section variants={pageFade} initial='hidden' animate='visible'>
+			{<FirebaseData onFetchData={handleProductData} />}
 			<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3'>
-				<FirebaseData onFetchData={handleProductData} />
 				<div className='mb-3 md:hidden'>
 					<h2 className='title1'>{product.title}</h2>
 					<h6 className='bodytext2 text-base'>{product.brand}</h6>

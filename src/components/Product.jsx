@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io';
 import { TbShoppingBagPlus } from 'react-icons/tb';
-
 //import FirebaseData from './FirebaseData';
 
 import SortingDropdown from './SortingDropdown';
@@ -85,24 +84,23 @@ export default function Product() {
 	// Effekt til at skjule beskeden om tilføjelse/fjernelse efter 3 sekunder
 	useEffect(() => {
 		if (favoriteMessage) {
-		  const timeoutId = setTimeout(() => {
-			setFavoriteMessage('');
-		  }, 3000); // Skjul beskeden efter 3 sekunder (3000 ms)
-	
-		  // Ryd op i timeout ved komponentens oprydning
-		  return () => clearTimeout(timeoutId);
+			const timeoutId = setTimeout(() => {
+				setFavoriteMessage('');
+			}, 3000); // Skjul beskeden efter 3 sekunder (3000 ms)
+
+			// Ryd op i timeout ved komponentens oprydning
+			return () => clearTimeout(timeoutId);
 		}
-	  }, [favoriteMessage]);
-	
+	}, [favoriteMessage]);
 
 	return (
 		<div className='relative flex'>
 			{/* Besked om tilføjelse/fjernelse af favoritter */}
 			{favoriteMessage && (
-      <div className="heading3 z-50 fixed text-sm top-10 right-10 p-4 bg-black text-white">
-        {favoriteMessage}
-      </div>
-    )}
+				<div className='heading3 z-50 fixed text-sm top-10 right-10 p-4 bg-black text-white'>
+					{favoriteMessage}
+				</div>
+			)}
 
 			{/*<FirebaseData onFetchData={handleFetchData} />*/}
 			<FilterOptions onFetchData={handleBrandData} />
@@ -143,7 +141,9 @@ export default function Product() {
 									<span>{item.price} kr.</span>
 									<h3 className='pr-5'>{item.title}</h3>
 								</div>
-								<div className='absolute top-0 right-0 cursor-pointer' onClick={() => handleToggleFavorite(item)}>
+								<div
+									className='absolute top-0 right-0 cursor-pointer'
+									onClick={() => handleToggleFavorite(item)}>
 									{favorites.some((favorite) => favorite.id === item.id) ? (
 										<IoMdHeart className='pt-2 pr-2 text-3xl md:pt-4 md:pr-4 md:text-6xl' />
 									) : (
