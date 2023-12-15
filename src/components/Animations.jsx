@@ -1,4 +1,4 @@
-
+// KODET AF KAROLINE LERCHE & SOFIE HYLLEN
 // Animation som laver fade-in-out overgang til alle sider
 export const pageFade = { 
    hidden: { opacity: 0 }, 

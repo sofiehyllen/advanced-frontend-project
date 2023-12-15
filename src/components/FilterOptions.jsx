@@ -1,17 +1,19 @@
+// KODET AF KAROLINE LERCHE & SOFIE HYLLEN
+// Importering af nødvendige biblioteker og komponenter
 import React, { useState, useEffect } from 'react';
-
 import { webshopDatabase } from '/src/firebaseConfig.js';
 import { onSnapshot, collection } from 'firebase/firestore';
-
 import { IoChevronDownSharp } from 'react-icons/io5';
 
 //--- Komponent for filtreringsfunktion på webshopsiden ---//
 const FilterOptions = ({ onFetchData }) => {
+    // State hooks til at håndtere filtreret data og valgte brands
 	const [filteredData, setFilteredData] = useState([]);
 	const [selectedBrands, setSelectedBrands] = useState([]);
 	const [availableBrands, setAvailableBrands] = useState([]);
 	const [isFilterOpen, setIsFilterOpen] = useState(false); // isNavOpen er fra start falsk = Mobil nav er lukket
 
+    // Funktion til håndtering af valg af brands
 	const handleBrandChange = (brand) => {
 		const updatedBrands = [...selectedBrands];
 		const index = updatedBrands.indexOf(brand);
@@ -25,6 +27,7 @@ const FilterOptions = ({ onFetchData }) => {
 		setSelectedBrands(updatedBrands);
 	};
 
+    // Effekt til at opdatere brands og filtreret data baseret på valgte brands
 	useEffect(() => {
 		const brandData = async () => {
 			const productsCollection = collection(webshopDatabase, 'products');

@@ -1,3 +1,5 @@
+// KODET AF KAROLINE LERCHE & SOFIE HYLLEN
+// Importér nødvendige biblioteker og billeder
 import { NavLink } from 'react-router-dom';
 import { IoMenu } from 'react-icons/io5';
 import { IoClose } from 'react-icons/io5';
@@ -5,26 +7,29 @@ import { TbShoppingBag } from 'react-icons/tb';
 import { IoMdHeart } from 'react-icons/io';
 import { useState } from 'react';
 import arrowBlack from '/src/assets/arrow-right-up-black.svg';
-
 import logo from '/src/assets/logo.png';
 
+//--- Header komponenten indeholder strukturen for hjemmesidens header ---//
 export default function Header() {
-	const [isNavOpen, setIsNavOpen] = useState(false); // isNavOpen er fra start falsk = Mobil nav er lukket
+  // State til styring af mobilnavigationens åbenhed/lukning
+	const [isNavOpen, setIsNavOpen] = useState(false);
 
+	// Returnér JSX-struktur for header
 	return (
 		<section>
+			{/* Overordnet container med header-indhold, inkl. logo og navigation */}
 			<div className='flex items-center justify-between border-b border-black mb-5 md:mb-10 xl:mb-16'>
 
+				{/* Link til hjemmesiden med logo */}
 				<NavLink to='/'>
 					<img className='w-24 md:w-36 md:mb-1 xl:w-44' src={logo} alt='Tryllespejlet logo' />
 				</NavLink>
 
-
-				{/*Navigation */}
+				{/* Navigationsektion indeholdende ikoner, mobilmenu og desktopmenu */}
 				<nav className='flex items-center space-x-4'>
-					{/*Ikoner til farvoritter og indkøbskurv */}
+					{/* Ikoner til favoritter og indkøbskurv */}
 					<div className='flex items-center space-x-3 md:ml-10 md:order-4'>
-						<NavLink to='/favorites' className=''>
+						<NavLink to='/favorites'>
 							<IoMdHeart className='text-2xl' />
 						</NavLink>
 						<button className='flex items-center snipcart-checkout '>
@@ -33,19 +38,22 @@ export default function Header() {
 						</button>
 					</div>
 
-					{/*-- Mobile menu --*/}
+					{/* Mobilmenu */}
 					<section className='flex md:hidden'>
-						{/* Vi laver en 'toggle-effekt' mellem sandt og falsk vha. en arrowfunktion */}
+						{/* Mobilmenuknappen med toggle-effekt */}
 						<div className='flex items-center space-x-4' onClick={() => setIsNavOpen((prev) => !prev)}>
 							<IoMenu size={45} />
 						</div>
 
+						{/* Indhold af mobilmenu baseret på isNavOpen-tilstanden */}
 						<div className={isNavOpen ? 'block' : 'hidden'}>
 							<div className='flex flex-col justify-center absolute w-full h-screen top-0 left-0  bg-white z-50'>
+								{/* Lukkeikon til mobilmenu */}
 								<div className='absolute top-0 right-0 py-4 px-4' onClick={() => setIsNavOpen(false)}>
-									{/* Ændrer isNavOpen tilbage falsk = nav lukkes */}
-									<IoClose size={55} /> {/*Lukke ikon */}
+									<IoClose size={55} />
 								</div>
+
+								{/* Links i mobilmenu og 'toggle-effekt' ved klik */}
 								<div
 									className='flex flex-col items-center mx-auto space-y-10 title1 w-fit'
 									onClick={() => setIsNavOpen(false)}>
@@ -63,8 +71,9 @@ export default function Header() {
 						</div>
 					</section>
 
-					{/*-- Tablet og laptop menu --*/}
+					{/* Desktopmenu til tablet og laptop */}
 					<div className='hidden md:flex items-center space-x-6 text-base xl:text-lg'>
+						{/* Book tid link med pilikon og desktopmenu links */}
 						<div className='flex items-center w-fit bg-transparent outline text-black h-5 px-1 xl:h-6 xl:px-2 rounded-sm'>
 							<a className='leading-none' href='https://trylle-spejlet.bestilling.nu/' target='_blank'>
 								Book tid
@@ -77,8 +86,9 @@ export default function Header() {
 						<NavLink to='/webshop'>Shop</NavLink>
 					</div>
 
-					{/*---Dansk / Engelsk sprog ---*/}
+					{/* Sprogmenu til dansk/engelsk sprogvalg */}
 					<div className='hidden md:flex order-last text-sm'>
+						{/* Vertikal streg som separator */}
 						<div className='v-line m-0 mr-6'></div>
 						<a className='underline' href='#'>
 							DA
