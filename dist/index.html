@@ -1,3 +1,4 @@
+<!-- KODET AF KAROLINE LERCHE & SOFIE HYLLEN -->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -7,13 +8,14 @@
 		<link rel="stylesheet" href="https://use.typekit.net/hjc0awc.css" />
 
 		<title>Tryllespejlet</title>
-		<script type="module" crossorigin src="/assets/index-_dzCAiFm.js"></script>
-		<link rel="stylesheet" crossorigin href="/assets/index-ospEfo2H.css">
+		<script type="module" crossorigin src="/assets/index-McoXWBuA.js"></script>
+		<link rel="stylesheet" crossorigin href="/assets/index-F0CsSk3A.css">
 	</head>
 	<body class="mx-5 my-5 md:mx-10 md:my-10 xl:mx-20 xl:my-10">
 		<div id="root"></div>
 	</body>
 	<script>
+		// Konfiguration af Snipcart-indstillinger
 		window.SnipcartSettings = {
 			publicApiKey: 'NTI2YjcyM2EtNDNiOC00NmQwLTliNTQtYzgwODAwOGViMDk5NjM4MzYyNzAwMTY4Mzk5Mzkx',
 			loadStrategy: 'on-user-interaction',
@@ -22,13 +24,18 @@
 
 		(() => {
 			var c, d;
+			// Kontroller og tildel versionsnummeret, hvis det ikke er angivet
 			(d = (c = window.SnipcartSettings).version) != null || (c.version = '3.0');
 			var s, S;
+			// Kontroller og tildel timeout-varigheden, hvis den ikke er angivet
 			(S = (s = window.SnipcartSettings).timeoutDuration) != null || (s.timeoutDuration = 2750);
 			var l, p;
+			// Kontroller og tildel domænet, hvis det ikke er angivet
 			(p = (l = window.SnipcartSettings).domain) != null || (l.domain = 'cdn.snipcart.com');
 			var w, u;
+			// Kontroller og tildel protokollen, hvis den ikke er angivet
 			(u = (w = window.SnipcartSettings).protocol) != null || (w.protocol = 'https');
+			// Kontroller og tildel værdien for "falsk positiv" (f) og hændelserne, der udløser indlæsningen
 			var f =
 					window.SnipcartSettings.version.includes('v3.0.0-ci') ||
 					(window.SnipcartSettings.version != '3.0' &&
@@ -78,6 +85,7 @@
 					m.forEach((g) => document.removeEventListener(g, o));
 			}
 			function v(t) {
+				// Sæt Snipcart-indstillinger baseret på brugerdefinerede konfigurationer
 				!f ||
 					((t.dataset.apiKey = window.SnipcartSettings.publicApiKey),
 					window.SnipcartSettings.addProductBehavior &&

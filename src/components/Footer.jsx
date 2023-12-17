@@ -9,7 +9,7 @@ export default function Footer() {
 	return (
 		<footer>
 			{/* Grid struktur med kolonner og rækker for indholdet i footer */}
-			<div className='grid grid-cols-2 heading3 pt-16 gap-y-5 md:pt-16 md:grid-cols-4 xl:grid-cols-5'>
+			<div className=' grid grid-cols-2 heading3 pt-16 gap-y-5 md:pt-16 md:grid-cols-4 xl:grid-cols-5 '>
 				{/* Nyhedsbrev sektion med inputfelt og tilmeldingsknap */}
 				<div className='flex flex-col relative'>
 					<h4>Nyhedsbrev</h4>

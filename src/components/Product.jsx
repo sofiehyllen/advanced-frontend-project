@@ -7,8 +7,6 @@ import { TbShoppingBagPlus } from 'react-icons/tb';
 
 //import FirebaseData from './FirebaseData';
 
-
-
 // Importér SortingDropdown og FilterOptions komponenter
 
 import SortingDropdown from './SortingDropdown';
@@ -38,11 +36,11 @@ export default function Product() {
 		if (isFavorite) {
 			const updatedFavorites = favorites.filter((favorite) => favorite.id !== item.id);
 			setFavorites(updatedFavorites);
-			setFavoriteMessage(`${item.title} - er fjernet fra favoritter!`);
+			setFavoriteMessage(`${item.title} er fjernet fra favoritter!`);
 		} else {
 			const updatedFavorites = [...favorites, item];
 			setFavorites(updatedFavorites);
-			setFavoriteMessage(`${item.title} - er tilføjet til favoritter!`);
+			setFavoriteMessage(`${item.title} er tilføjet til favoritter!`);
 		}
 	};
 
@@ -86,11 +84,7 @@ export default function Product() {
 		<div className='relative flex'>
 			{/* Besked om tilføjelse/fjernelse af favoritter */}
 			{favoriteMessage && (
-
-				<div className="heading3 z-50 fixed text-sm top-10 right-10 p-4 bg-black text-white">
-					{favoriteMessage}
-				</div>
-
+				<div className='heading3 z-50 fixed text-sm top-10 right-10 p-4 bg-black text-white'>{favoriteMessage}</div>
 			)}
 
 			{/* Komponenten for filtreringsmuligheder */}
@@ -113,10 +107,7 @@ export default function Product() {
 					{/* Grid med produkter baseret på filtrerede data */}
 					<div className='grid grid-cols-2 gap-3 w-full md:gap-5 xl:gap-6 md:pl-20 xl:w-11/12 xl:grid-cols-3'>
 						{filteredData.map((item) => (
-
-							<div
-								key={item.id}
-								className={`relative ${item.tallImageUrl ? 'row-span-2' : 'row-span-1'}`}>
+							<div key={item.id} className={`relative ${item.tallImageUrl ? 'row-span-2' : 'row-span-1'}`}>
 								{/* Link til produktdetaljeside med produktbillede */}
 
 								<Link to={`/products/${item.id}`} className='w-fit'>
