@@ -2,10 +2,11 @@
 // Import af nødvendige afhængigheder og aktiver.
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import FirebaseData from '../components/FirebaseData'; // Komponent til at hente data fra Firebase.
-import { IoMdHeartEmpty } from 'react-icons/io'; // Ikonsymbol fra React Icons-biblioteket.
-import { motion } from 'framer-motion'; // Framer Motion-bibliotek til animationer.
-import { pageFade } from '../components/Animations'; // Animationskomponent.
+
+import FirebaseData from '../components/FirebaseData';
+import { motion } from 'framer-motion';
+import { pageFade } from '../components/Animations';
+
 
 // Hovedkomponenten for produktssiden.
 export default function ProductPage() {
@@ -21,10 +22,11 @@ export default function ProductPage() {
 	// Returnerer JSX
 	return (
 		<motion.section variants={pageFade} initial='hidden' animate='visible'>
-			{/* Grid-layout for produktinformation */}
-			<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3'>
-				<FirebaseData onFetchData={handleProductData} /> {/* Henter produktdata fra Firebase. */}
-				{/* Produktinformation og billede */}
+
+			{<FirebaseData onFetchData={handleProductData} />} {/* Henter produktdata fra Firebase. */}
+			<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3'> {/* Grid-layout for produktinformation */}
+       {/* Produktinformation og billede */}
+
 				<div className='mb-3 md:hidden'>
 					<h2 className='title1'>{product.title}</h2>
 					<h6 className='bodytext2 text-base'>{product.brand}</h6>
@@ -62,7 +64,7 @@ export default function ProductPage() {
 							className='snipcart-add-item btn '
 							data-item-id={product.id}
 							data-item-image={product.imageUrl}
-							data-item-name={product.name}
+							data-item-name={product.title}
 							data-item-url={product.url}
 							data-item-price={product.price}>
 							Tilføj til kurv
@@ -71,7 +73,7 @@ export default function ProductPage() {
 				</div>
 				{/* Ikon for hjerte og yderligere produktinformation */}
 				<div className='order-last md:mt-5 md:col-start-2 xl:col-start-auto xl:order-3 xl:row-span-2 xl:flex xl:flex-col xl:justify-end xl:pl-10'>
-					
+
 					<div className=''>
 						{/* Viser brandbeskrivelse, hvis den er tilgængelig */}
 						{product.brandDescription && (

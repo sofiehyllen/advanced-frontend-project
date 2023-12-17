@@ -2,7 +2,6 @@
 // Importér nødvendige biblioteker og komponenter
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BsArrowRight } from 'react-icons/bs';
 
 // IMPORTERING AF BILLEDER //
 import kollega1 from '/src/assets/pernille.jpg';

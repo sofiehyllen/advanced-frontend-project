@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { IoChevronDownSharp } from 'react-icons/io5';
 
+
 // Komponenten SortingDropdown håndterer sorteringsfunktionen på webshopsiden
 export default function SortingDropdown({
 	onSortingTitleAZ,
@@ -13,6 +14,7 @@ export default function SortingDropdown({
 	// State hooks til at styre dropdown-menuens tilstand og aktivt sorteringskriterium
 	const [isOpen, setIsOpen] = useState(false); // Dropdown-menuen er fra start lukket
 	const [activeSorting, setActiveSorting] = useState('A - Z'); // Default sorteringskriterium er 'A - Z'
+
 
 	// Funktioner til håndtering af sortering og opdatering af tilstand
 	const handleSortingPriceLowHigh = () => {

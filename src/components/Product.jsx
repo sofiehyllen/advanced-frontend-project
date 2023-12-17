@@ -5,7 +5,12 @@ import { Link } from 'react-router-dom';
 import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io';
 import { TbShoppingBagPlus } from 'react-icons/tb';
 
+//import FirebaseData from './FirebaseData';
+
+
+
 // Importér SortingDropdown og FilterOptions komponenter
+
 import SortingDropdown from './SortingDropdown';
 import FilterOptions from './FilterOptions';
 
@@ -81,9 +86,11 @@ export default function Product() {
 		<div className='relative flex'>
 			{/* Besked om tilføjelse/fjernelse af favoritter */}
 			{favoriteMessage && (
+
 				<div className="heading3 z-50 fixed text-sm top-10 right-10 p-4 bg-black text-white">
 					{favoriteMessage}
 				</div>
+
 			)}
 
 			{/* Komponenten for filtreringsmuligheder */}
@@ -106,10 +113,12 @@ export default function Product() {
 					{/* Grid med produkter baseret på filtrerede data */}
 					<div className='grid grid-cols-2 gap-3 w-full md:gap-5 xl:gap-6 md:pl-20 xl:w-11/12 xl:grid-cols-3'>
 						{filteredData.map((item) => (
+
 							<div
 								key={item.id}
 								className={`relative ${item.tallImageUrl ? 'row-span-2' : 'row-span-1'}`}>
 								{/* Link til produktdetaljeside med produktbillede */}
+
 								<Link to={`/products/${item.id}`} className='w-fit'>
 									<div className='h-full'>
 										{/* Vis enten almindeligt billede eller stort billede afhængigt af data */}

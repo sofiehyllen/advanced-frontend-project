@@ -16,6 +16,7 @@ import { motion } from 'framer-motion'; // Importer motion fra 'framer-motion' t
 import { useEffect } from 'react'; // Importer useEffect fra 'react' til hooks
 
 
+
 // BehandlingerPage-komponenten
 export default function BehandlingerPage() {
 	// Hook som sørger for at siden starter fra toppen når den renderes
@@ -29,8 +30,8 @@ export default function BehandlingerPage() {
 				<div className='md:order-2 md:w-5/6 md:pl-8 xl:w-2/3'>
 					<h1 className='title1 md:title2'>Tid til forandring?</h1>
 					<p className='bodytext1'>
-						Opdag vores skønne klip og behandlinger og lad dig inspirere inden dit næste besøg hos
-						Tryllespejlet - vores team står klar til at forvandle dit hår.
+						Opdag vores skønne klip og behandlinger og lad dig inspirere inden dit næste besøg hos Tryllespejlet -
+						vores team står klar til at forvandle dit hår.
 					</p>
 				</div>
 				<div className='w-full'>
@@ -162,8 +163,8 @@ export default function BehandlingerPage() {
 						</p>
 
 						<p className='bodytext1 pt-3'>
-							Giv dit hår den kærlighed det fortjener med vores eksklusive udvalg af shampoo, balsam,
-							hårkur og meget mere.
+							Giv dit hår den kærlighed det fortjener med vores eksklusive udvalg af shampoo, balsam, hårkur og
+							meget mere.
 						</p>
 
 						<Link to='/webshop' className='btn mt-5 xl:mt-16'>
@@ -220,9 +221,8 @@ export default function BehandlingerPage() {
 						<div className='md:w-2/3  xl:pl-16'>
 							<h3 className='heading1 leading-none'>Hårkur</h3>
 							<p className='bodytext2 pb-2'>
-								Forny dit hår med vores INNERENSE hårkur. Behandlingen indebærer vask, en detox maske og
-								en hydrate maske. Derudover får du hovedbundsmassage og behandlingen afsluttes med en
-								let styling.
+								Forny dit hår med vores INNERENSE hårkur. Behandlingen indebærer vask, en detox maske og en
+								hydrate maske. Derudover får du hovedbundsmassage og behandlingen afsluttes med en let styling.
 							</p>
 							<div className='flex justify-between bodytext1 text-sm pt-3 xl:pt-5 md:bodytext1'>
 								<p>INNERENSE hårkur</p>

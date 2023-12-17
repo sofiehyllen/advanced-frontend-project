@@ -27,7 +27,7 @@ const FirebaseData = ({ onFetchData }) => {
 
 		// Kald fetchData-funktionen
 		fetchData();
-	}, [onFetchData]); // Lyt kun efter ændringer i onFetchData for at undgå unødvendige opkald
+	}, [onFetchData]); // Lyt kun efter ændringer i onFetchData
 
 	// Komponenten returnerer null, da den primært har en sideeffekt og ikke returnerer noget til UI'et
 	return null;
