@@ -1,10 +1,11 @@
-// Import the functions you need from the SDKs you need
+// KODET AF KAROLINE LERCHE & SOFIE HYLLEN
+// Importér de funktioner, du har brug for, fra de nødvendige SDK'er.
 import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
-// TODO: Add SDKs for Firebase products that you want to use
+// TODO: Tilføj SDK'er til de Firebase-produkter, du ønsker at bruge.
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
+// Konfigurationen for din webapps Firebase-projekt
 const firebaseConfig = {
   apiKey: "AIzaSyBjeFqAUkxsfhnj_bVxic7FEfyWiw1IgsI",
   authDomain: "tryllespejlet-a1095.firebaseapp.com",
@@ -15,7 +16,7 @@ const firebaseConfig = {
   appId: "1:1007377059791:web:efbadd8372e1491bd70cba"
 };
 
-// Initialize Firebase
+// Initialiser Firebase ved at konfigurere appen
 const app = initializeApp(firebaseConfig);
+// Eksportér Firestore-databasen for webshoppen
 export const webshopDatabase = getFirestore(app);
-

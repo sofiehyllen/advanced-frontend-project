@@ -1,3 +1,5 @@
+// KODET AF KAROLINE LERCHE & SOFIE HYLLEN
+// Import af nødvendige afhængigheder og aktiver.
 import React, { useState } from 'react';
 import contactCard1 from '/src/assets/kontakt_kort1.jpg';
 import contactCard2 from '/src/assets/kontakt_kort2.jpg';
