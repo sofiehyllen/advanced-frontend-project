@@ -1,15 +1,22 @@
-import { Link } from 'react-router-dom';
+// KODET AF KAROLINE LERCHE & SOFIE HYLLEN
+
+// Denne fil indeholder en React-komponent for BehandlingerPage
+// Komponenten viser klip, farve, inspiration, styling, kurbehandlinger og bookingoplysninger
+
+import { Link } from 'react-router-dom'; // Importer Link fra 'react-router-dom' til navigation
 import behandlinger1 from '/src/assets/behandlinger-1.jpg';
 import behandlinger2 from '/src/assets/behandlinger-2.jpg';
 import behandlinger3 from '/src/assets/behandlinger-3.jpg';
 import arrowRight from '/src/assets/arrow-right.svg';
 import arrowRightUp from '/src/assets/arrow-right-up.svg';
 
-import { IoChevronForwardSharp } from 'react-icons/io5';
-import { pageFade } from '../components/Animations';
-import { motion } from 'framer-motion';
-import { useEffect } from 'react';
+import { IoChevronForwardSharp } from 'react-icons/io5'; // Importer Ikoner fra 'react-icons'
+import { pageFade } from '../components/Animations'; // Importer pageFade-animationen fra 'Animations'
+import { motion } from 'framer-motion'; // Importer motion fra 'framer-motion' til animationer
+import { useEffect } from 'react'; // Importer useEffect fra 'react' til hooks
 
+
+// BehandlingerPage-komponenten
 export default function BehandlingerPage() {
 	// Hook som sørger for at siden starter fra toppen når den renderes
 	useEffect(() => {

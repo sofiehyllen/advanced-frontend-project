@@ -1,3 +1,5 @@
+// KODET AF KAROLINE LERCHE & SOFIE HYLLEN
+// Importér nødvendige biblioteker og komponenter
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BsArrowRight } from 'react-icons/bs';
@@ -14,17 +16,21 @@ import kollega8 from '/src/assets/magnus.jpg';
 import kollega9 from '/src/assets/karoline.jpg';
 import kollega10 from '/src/assets/julie.jpg';
 
+// SortSection komponenten håndterer filtrering og visning af medarbejdere baseret på kategorier
 const SortSection = () => {
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedCategory, setSelectedCategory] = useState('all'); // State-hook til at styre den valgte kategori
 
+  // Funktion til håndtering af klik på kategori-knapperne
   const handleButtonClick = (category) => {
     setSelectedCategory(category);
   };
 
+  // Funktion til håndtering af klik på pileknappen for at vise alle kategorier
   const handleArrowClick = () => {
     handleButtonClick('all');
   };
 
+  // Array med medarbejdere og deres information
   const categories = [
     { id: 1, category: ['frisør'], title: 'Frisør/Ejer', name: 'Pernille Thomsen', src: kollega1 },
     { id: 2, category: ['frisør', 'kosmetolog'], title: 'Frisør/Kosmetolog', name: 'Eva Nipali', src: kollega2 },
@@ -38,13 +44,16 @@ const SortSection = () => {
     { id: 10, category: ['kosmetolog'], title: 'Kosmetolog', name: 'Julie Sommer', src: kollega10 },
   ];
 
+  // Filtrer medarbejdere baseret på den valgte kategori
   const filteredCategories =
     selectedCategory === 'all'
       ? categories
       : categories.filter((c) => c.category.includes(selectedCategory));
 
+  // Returnér JSX-struktur for sortering og visning af medarbejdere
   return (
     <div>
+      {/* Knappe til at filtrere medarbejdere baseret på kategori */}
       <div className="flex items-center justify-end space-x-4">
         <Link
           to="#"
@@ -83,10 +92,12 @@ const SortSection = () => {
         </span>
       </div>
 
+      {/* Visning af medarbejdere baseret på filtrering */}
       <div className="mt-4 flex flex-wrap justify-center">
         {filteredCategories.map((item) => (
           <div key={item.id} className="mb-8 text-center w-1/2 xl:w-1/3">
             <div className="border border-black p-4 m-1">
+              {/* Vis billede, navn og titel for hver medarbejder */}
               <img src={item.src} alt={item.name} className="w-30 h-30 mx-auto mb-6" />
               <hr className="border-t border-black my-4"></hr>
               <p className="mt-4 text-left title1 text-sm md:text-2xl xl:text-3xl">{item.name}</p>
@@ -99,4 +110,5 @@ const SortSection = () => {
   );
 };
 
+// Eksportér SortSection komponenten som standard
 export default SortSection;
