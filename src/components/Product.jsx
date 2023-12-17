@@ -97,9 +97,7 @@ export default function Product() {
 		<div className='relative flex'>
 			{/* Besked om tilføjelse/fjernelse af favoritter */}
 			{favoriteMessage && (
-				<div className='heading3 z-50 fixed text-sm top-10 right-10 p-4 bg-black text-white'>
-					{favoriteMessage}
-				</div>
+				<div className='heading3 z-50 fixed text-sm top-10 right-10 p-4 bg-black text-white'>{favoriteMessage}</div>
 			)}
 
 			{/*<FirebaseData onFetchData={handleFetchData} />*/}
@@ -117,9 +115,7 @@ export default function Product() {
 				<div className='flex justify-end'>
 					<div className='grid grid-cols-2 gap-3 w-full md:gap-5 xl:gap-6 md:pl-20 xl:w-11/12 xl:grid-cols-3'>
 						{filteredData.map((item) => (
-							<div
-								key={item.id}
-								className={`relative ${item.tallImageUrl ? 'row-span-2' : 'row-span-1'}`}>
+							<div key={item.id} className={`relative ${item.tallImageUrl ? 'row-span-2' : 'row-span-1'}`}>
 								<Link to={`/products/${item.id}`} className='w-fit'>
 									<div className='h-full'>
 										{item.tallImageUrl ? (
@@ -141,9 +137,7 @@ export default function Product() {
 									<span>{item.price} kr.</span>
 									<h3 className='pr-5'>{item.title}</h3>
 								</div>
-								<div
-									className='absolute top-0 right-0 cursor-pointer'
-									onClick={() => handleToggleFavorite(item)}>
+								<div className='absolute top-0 right-0 cursor-pointer' onClick={() => handleToggleFavorite(item)}>
 									{favorites.some((favorite) => favorite.id === item.id) ? (
 										<IoMdHeart className='pt-2 pr-2 text-3xl md:pt-4 md:pr-4 md:text-6xl' />
 									) : (

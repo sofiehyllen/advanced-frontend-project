@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import FirebaseData from '../components/FirebaseData';
-import { IoMdHeartEmpty } from 'react-icons/io';
 import { motion } from 'framer-motion';
 import { pageFade } from '../components/Animations';
 
