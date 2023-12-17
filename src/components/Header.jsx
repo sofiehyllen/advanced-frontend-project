@@ -72,7 +72,7 @@ export default function Header() {
 											DA
 										</a>
 										<p className='px-1'>/</p>
-										<a href='#'>EN</a>
+										<a href='https://tryllespejlet.en.sofiehyllen.dk/'>EN</a>
 									</div>
 								</div>
 							</div>
@@ -102,7 +102,7 @@ export default function Header() {
 							DA
 						</a>
 						<p className='px-1'>/</p>
-						<a href='#'>EN</a>
+						<a href='https://tryllespejlet.en.sofiehyllen.dk/'>EN</a>
 					</div>
 				</nav>
 			</div>

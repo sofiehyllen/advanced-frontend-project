@@ -12,10 +12,9 @@ import { pageFade } from '../components/Animations'; // Importer pageFade-animat
 
 // AboutPage-komponenten indeholder information om frisørsalonen og teamet
 export default function AboutPage() {
-
 	return (
 		<motion.section variants={pageFade} initial='hidden' animate='visible'>
-    {/* Sektion med information om frisørsalonen og dens ejer */}
+			{/* Sektion med information om frisørsalonen og dens ejer */}
 			<div className='md:flex'>
 				<div className='pt-5 md:p-0'>
 					<h2 className='heading3'>MØD OS</h2>
@@ -40,10 +39,8 @@ export default function AboutPage() {
 				</div>
 			</div>
 
-
-      {/* Vandret streg mellem sektioner */}
-      <div className='h-line'></div>
-
+			{/* Vandret streg mellem sektioner */}
+			<div className='h-line'></div>
 
 			<div>
 				<div>
@@ -59,12 +56,10 @@ export default function AboutPage() {
 				</div>
 			</div>
 
+			{/* Vandret streg mellem sektioner */}
+			<div className='h-line'></div>
 
-      {/* Vandret streg mellem sektioner */}
-      <div className='h-line'></div>
-
-
-{/* Sektion med information om sociale medier */}
+			{/* Sektion med information om sociale medier */}
 			<div className='md:flex mx-auto  md:pb-20 md:w-10/12 '>
 				<div className='pt-5 md:p-0'>
 					<h2 className='heading3'>FØLG MED</h2>
@@ -73,7 +68,7 @@ export default function AboutPage() {
 				<div className='v-line'></div>
 				<div className='h-line'></div>
 				<div className='flex md:block'>
-          {/* Links til Facebook- og Instagram-profiler */}
+					{/* Links til Facebook- og Instagram-profiler */}
 					<a href='https://www.facebook.com/profile.php?id=100063619180976' target='_blank' rel='noopener noreferrer'>
 						<BsFacebook className='text-6xl text-gray-300 mr-6 mt-1 ml-1 md:mb-12 md:mt-24 xl:mt-32' />
 					</a>
@@ -83,7 +78,7 @@ export default function AboutPage() {
 				</div>
 
 				<div className='md:order-2'>
-          {/* Tekst om at følge med på sociale medier */}
+					{/* Tekst om at følge med på sociale medier */}
 					<p className='bodytext1  pt-5  md:mt-16 md:ml-5 xl:mt-32'>
 						Følg med på vores sociale medier for opdateringer, skønhedstips og særlige tilbud. Bliv en del af vores
 						fællesskab og del din skønhedsrejse med os.
