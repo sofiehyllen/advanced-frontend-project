@@ -40,8 +40,8 @@ export default function HomePage() {
 				<div className='pt-5 md:p-0'>
 					<h1 className='title1'>Oplev forskel hos din lokale frisør</h1>
 					<p className='bodytext1 xl:w-2/3 pt-5'>
-						Hos Tryllespejlet får du professionelle stylister, som forstår din stil - og vi står vi klar til
-						at skabe præcis det look, du drømmer om
+						Hos Tryllespejlet får du professionelle stylister, som forstår din stil - og vi står vi klar til at skabe
+						præcis det look, du drømmer om
 					</p>
 					<Link to='/behandlinger' className='btn mt-5 xl:mt-10'>
 						<button className='leading-none'>Book tid</button>
@@ -77,8 +77,8 @@ export default function HomePage() {
 						<div className='w-fit border-b border-black pb-7 md:ml-3 xl:pb-14'>
 							<h4 className='heading1 leading-none'>Klip</h4>
 							<p className='bodytext1 pr-2 pt-3'>
-								Nyd en skræddersyet klipbehandling, hvor vores erfarne stylister bringer din personlige
-								stil til live.
+								Nyd en skræddersyet klipbehandling, hvor vores erfarne stylister bringer din personlige stil til
+								live.
 							</p>
 						</div>
 						<div className='w-1/5'>
@@ -95,8 +95,8 @@ export default function HomePage() {
 						<div className='w-fit border-b border-black pb-7 md:ml-3 xl:pb-14'>
 							<h4 className='heading1 leading-none'>Farve</h4>
 							<p className='bodytext1 pr-2 pt-3 xl:w-5/6'>
-								Nyd en personlig farvebehandling, hvor vi skaber den perfekte nuance til at
-								komplimentere din unikke stil.
+								Nyd en personlig farvebehandling, hvor vi skaber den perfekte nuance til at komplimentere din
+								unikke stil.
 							</p>
 						</div>
 						<div className='w-1/5'>
@@ -132,12 +132,10 @@ export default function HomePage() {
 					<h1 className='title1 md:title2'>Nyt i vores Webshop</h1>
 					<div className='py-3 space-y-5 md:pt-3 md:pr-10 xl:pb-10 xl:pt-6 xl:pr-32'>
 						<p>
-							Træd ind i vores virtuelle frisørverden! Udforsk vores webshop, hvor du finder eksklusive
-							hårprodukter og stylingredskaber håndplukket af vores erfarne stylister.
+							Træd ind i vores virtuelle frisørverden! Udforsk vores webshop, hvor du finder eksklusive hårprodukter
+							og stylingredskaber håndplukket af vores erfarne stylister.
 						</p>
-						<p>
-							Skab salonkvalitet derhjemme og få en frisk, moderne stil med vores nøje udvalgte sortiment.
-						</p>
+						<p>Skab salonkvalitet derhjemme og få en frisk, moderne stil med vores nøje udvalgte sortiment.</p>
 					</div>
 					<Link to='/webshop' className='btn mt-5 mb-7 xl:mt-10'>
 						<button className='leading-none'>Til webshop</button>
@@ -174,7 +172,7 @@ export default function HomePage() {
 						/>
 					</Link>
 					<Link
-						to='/'
+						to='/products/revitalizing_hair_oil_tonik'
 						className='relative overflow-hidden bg-cover bg-no-repeat rounded-img-xs md:rounded-img-sm xl:rounded-img-md'>
 						<img
 							className='img-container-sm rounded-none transition duration-300 ease-in-out hover:scale-110'

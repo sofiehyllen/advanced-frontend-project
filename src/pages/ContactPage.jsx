@@ -19,9 +19,7 @@ export default function ContactPage() {
 	// Funktion til at sende email ved at åbne mailto-link i browseren
 	const sendEmail = () => {
 		const subject = encodeURIComponent('Ny kontaktformularbesked');
-		const body = encodeURIComponent(
-			`Fornavn: ${fornavn}\nEfternavn: ${efternavn}\nEmail: ${email}\nBesked: ${besked}`
-		);
+		const body = encodeURIComponent(`Fornavn: ${fornavn}\nEfternavn: ${efternavn}\nEmail: ${email}\nBesked: ${besked}`);
 		const mailtoLink = `mailto:kj.lerche@gmail.com?subject=${subject}&body=${body}`;
 
 		window.location.href = mailtoLink;
@@ -47,13 +45,13 @@ export default function ContactPage() {
 					<h1 className='title1'>Kontakt os</h1>
 					<p className='bodytext1 xl:w-2/3 pt-1'>
 						{/* Kontaktinformation og velkomsttekst */}
-						Har du spørgsmål, ønsker en aftale eller vil dele dine tanker med os? Vi er her for at lytte. Du
-						er altid velkommen til at ringe ind med spørgsmål, eller sende os en email, for at komme i
-						forbindelse med vores dedikerede team.
+						Har du spørgsmål, ønsker en aftale eller vil dele dine tanker med os? Vi er her for at lytte. Du er altid
+						velkommen til at ringe ind med spørgsmål, eller sende os en email, for at komme i forbindelse med vores
+						dedikerede team.
 						<br></br>
 						<br></br>
-						Vi ser altid frem til at høre fra dig og hjælpe med dine behov. Din skønhed og tilfredshed er
-						vores prioritet.
+						Vi ser altid frem til at høre fra dig og hjælpe med dine behov. Din skønhed og tilfredshed er vores
+						prioritet.
 					</p>
 					<div className='h-line my-5'></div>
 					{/* Kontaktinformation */}
@@ -94,7 +92,7 @@ export default function ContactPage() {
 					</div>
 					{/* Kort 2 */}
 					<div className='border border-black p-4'>
-						<a href='#' target='_blank' rel='noopener noreferrer'>
+						<a href='#' rel='noopener noreferrer'>
 							<img src={contactCard2} alt='img link' />
 							<hr className='border-t border-black my-4'></hr>
 							<p className='text-left title1 text-sm md:text-xl xl:text-3xl'>Tilmeld vores nyhedsbrev</p>
@@ -119,12 +117,11 @@ export default function ContactPage() {
 						<h2 className='heading3 xl:pb-4 xl:pt-10'>Skriv til os</h2>
 						<p className='bodytext1 pt-5 pb-5 md:pr-2 xl:pb-14 '>
 							{/* Instruktion og introduktion til at udfylde kontaktformularen */}
-							Udfyld venligst kontaktformularen nedenfor, hvis du ønsker at sende os en besked eller har
-							spørgsmål.
+							Udfyld venligst kontaktformularen nedenfor, hvis du ønsker at sende os en besked eller har spørgsmål.
 							<br></br>
 							<br></br>
-							Vi værdsætter din tid, og vores team vil gøre deres bedste for at vende tilbage til dig så
-							hurtigt som muligt – vi ser frem til at betjene dig!
+							Vi værdsætter din tid, og vores team vil gøre deres bedste for at vende tilbage til dig så hurtigt som
+							muligt – vi ser frem til at betjene dig!
 						</p>
 					</div>
 					{/* Kontaktformular */}

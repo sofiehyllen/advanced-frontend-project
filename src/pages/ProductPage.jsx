@@ -55,7 +55,7 @@ export default function ProductPage() {
 							className='snipcart-add-item btn '
 							data-item-id={product.id}
 							data-item-image={product.imageUrl}
-							data-item-name={product.name}
+							data-item-name={product.title}
 							data-item-url={product.url}
 							data-item-price={product.price}>
 							Tilføj til kurv
@@ -63,7 +63,6 @@ export default function ProductPage() {
 					</div>
 				</div>
 				<div className='order-last md:mt-5 md:col-start-2 xl:col-start-auto xl:order-3 xl:row-span-2 xl:flex xl:flex-col xl:justify-end xl:pl-10'>
-					<IoMdHeartEmpty className='text-4xl md:text-5xl' />
 					<div className=''>
 						{product.brandDescription && (
 							<>
